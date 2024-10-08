@@ -1,0 +1,155 @@
+
+/* BRETTENHAM HOUSE
+/* OTHER ALIAS LTD
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* VARIABLES
+/* ---------------------------------------------- */
+
+body{
+    overflow-x: hidden;
+}
+
+:root {
+    --blue: #0048C6;
+    --teal: #62BCB3;
+    --green: #168771;
+    --orange: #FF4602;
+    --mustard: #FF9222;
+    --black: #000000;
+    --white: #FFFFFF;
+    --off-black: #333333;
+    --grey: #B6B6B6FF;
+    --light-grey: #ECF5F5;
+    --ziggurat: #BDE2DF;
+    --breaker-bay: #6CA6A2;
+    --edgewater: #CAE2E0;
+}
+
+.home-slide-1{
+
+    position: relative;
+
+}
+
+.slide-con1 {
+    width: 87%;
+    height: 95%;
+    background-color: var(--orange);
+    position: absolute;
+    z-index: -1;
+    left: 80px;
+    top: 12px;
+}
+.h-slide1-img {
+    position: absolute;
+    right: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+}
+
+
+.buildingSection .theBuildingSlider .sliderItem {
+    padding: 4px;
+}
+
+.buildingSection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: inherit;
+}
+
+.theBuildingSlider {
+    margin: 0 -350px;
+  
+}
+
+
+.buildingSection{
+   padding-bottom: 150px;
+}
+
+
+.build-prev{
+    position: absolute;
+    z-index: 4;
+    top: 10px;
+    right: 50px;
+}
+
+
+.build-next{
+    position: absolute;
+    z-index: 4;
+    top: 10px;
+    right: 30px;
+}
+
+/* index slick */
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 50px;
+    margin: 4px;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 59px;
+    height: 5px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+   background-color: var(--white);
+}
+
+.slick-dots li button {
+    display: none;
+}
+
+.slick-dots li:hover{
+    background-color: var(--orange);
+}
+/* index slick */
+
+.key-facts{
+    margin: 0px  !important;
+    padding: 70px ;
+  
+}
+
+.local-area{
+    margin: 0px  !important;
+    padding: 70px ;
+}
+
+
+
+
+.buil-four{
+    position: relative;
+}
+
+
+.buil-slide-con2 {
+    width: 90%;
+    height: 100%;
+    background-color: var(--blue);
+    position: absolute;
+    z-index: -1;
+   
+    
+}
+
+
+
+

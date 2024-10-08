@@ -1,0 +1,42 @@
+@media only screen and (max-width: 991px) {
+   
+    
+    .theBuildingSlider{
+
+        margin: 3px -270px;
+    }
+
+    .slick-dots li {
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 5px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        color: white;
+        background-color: var(--white);
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: -25px;
+        display: block;
+        width: 100%;
+        padding: 37px;
+        margin: 4px;
+        list-style: none;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+  }
