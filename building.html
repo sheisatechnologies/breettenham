@@ -14,6 +14,7 @@
     <link href="assets/css/slick-theme.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom.css?v=1.0.0" rel="stylesheet">
     <link href="assets/css/style.css?v=1.0.0" rel="stylesheet">
+    <link href="assets/css/media.css?v=1.0.0" rel="stylesheet">
     <link href="assets/images/favicon.png" rel="shortcut icon">
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,16 +37,19 @@
 
 
 
+
+
+
         .wrapper {
             position: relative;
             position: relative;
            
             width:100%;
-    height: 600px;
-    margin-left: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            height: 600px;
+            margin-left: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
            
             background-color: #FF4602; /* Red wrapper background */
             overflow: hidden;
@@ -74,11 +78,13 @@
 
         .image {
             width: 100%;
-    height: 100%;
-    object-fit: cover;
-   padding: 50px;
+            height: 100%;
+            object-fit: cover;
+            padding: 50px;
 
         }
+
+        
 </style>
 </head>
 <body>
@@ -86,8 +92,8 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/brettenham-house-logo-black.svg" alt="Brettenham House" class="d-none d-lg-block">
-                <img src="assets/images/brettenham-house-symbol-black.svg" alt="Brettenham House" class="d-lg-none">
+                <img src="assets/images/brettenham-house-logo-black.svg" alt="Normal Logo" class="fixed-top-image normal-image" id="normalLogo">
+        <img src="assets/images/brettenham-house-symbol-black.svg" alt="Fixed Logo" class="fixed-top-image fixed-image" id="fixedLogo">
             </a>
             <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="toggler-icon top-bar"></span>
@@ -97,7 +103,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link tcm active" href="building.html">Building</a>
+                        <a class="nav-link tcm" href="building.html">Building</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link tcm" href="location.html">Location</a>
@@ -217,13 +223,21 @@
         </div>
     </div> -->
   
-    <div class="container buil-four">
+    <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="buil-slide-con2"></div>
-                <img src="assets/images/ci-building-2.jpg" alt="Photograph of Brettenham House" class="img-fluid img-fluid d-none d-lg-block p-5 buil-slide2-img">
+            <div class="col-lg-1">
+                <h1 class="rotate trm">panoramic views</h1>
             </div>
+
+            <div class="col-lg-10">
+                <div class="blue-box-buil1">
+                    <!-- Replace with your image URL -->
+                    <img src="assets/images/ci-buil-panaromic.jpg" alt="Placeholder Image">
+                </div>
+            </div>
+           
         </div>
+       
     </div>
 
     <div class="container position-relative">
@@ -232,8 +246,10 @@
                 <div class="row ptd2 ptm2 pbd4 pbm4">
 
                     <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 d-flex align-items-start flex-column">
-                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                        <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+                        <div class="cyan-box-buil2">
+                            <!-- Replace with your image URL -->
+                            <img src="assets/images/ci-buil2.jpg" alt="Placeholder Image">
+                        </div>
                     </div>
         
                     <div class="col-lg-3 order-lg-0 ptd3 ptm2 d-flex align-items-start flex-column">
@@ -367,8 +383,10 @@
     <div class="container">
         <div class="row ptd2 ptm2 pbd4 pbm4">
             <div class="col-lg-8 order-lg-0 pbm4">
-                <img src="assets/images/building-image-desktop-4.jpg" alt="History - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                <img src="assets/images/building-image-mobile-4.jpg" alt="History - Brettenham House" class="img-fluid d-lg-none">
+                <div class="orange-box-buil3">
+                    <!-- Replace with your image URL -->
+                    <img src="assets/images/ci-building-1.jpg" alt="Placeholder Image">
+                </div>
             </div>
             <div class="col-lg-3 offset-lg-1 order-lg-1 ptd3 ptm2">
                 <h3>History</h3>
@@ -626,6 +644,18 @@
     });
 });
 
+</script>
+
+<script>
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 50) {
+            $('#normalLogo').hide();
+            $('#fixedLogo').show();
+        } else {
+            $('#normalLogo').show();
+            $('#fixedLogo').hide();
+        }
+    });
 </script>
 
 </body>

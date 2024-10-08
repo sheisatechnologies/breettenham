@@ -1,10 +1,10 @@
-gsap.from(".slide-con1", {
+gsap.from(".red-box-home1", {
     x: -800,        // Start from 800px to the right
     opacity: 0,    // Start with zero opacity
     duration: 3,   // Duration of 3 seconds
   });
 
-  gsap.from(".h-slide1-img", {
+  gsap.from(".red-box-home1 img", {
     x: -300,        // Start from 800px to the right
     opacity: 0,    // Start with zero opacity
     duration: 3,   // Duration of 3 seconds
@@ -12,18 +12,53 @@ gsap.from(".slide-con1", {
   });
 
 
-  gsap.from(".buil-slide-con2", {
+  gsap.from(".yellow-box-home2", {
+    x: -800,        // Start from 800px to the right
+    opacity: 0,    // Start with zero opacity
+    duration: 3,   // Duration of 3 seconds
+  });
+
+  gsap.from(".yellow-box-home2 img", {
+    x: -300,        // Start from 800px to the right
+    opacity: 0,    // Start with zero opacity
+    duration: 3,   // Duration of 3 seconds
+    delay:1
+  });
+
+
+  gsap.from(".blue-box-buil1", {
     x: 800,        // Start from 800px to the right
     opacity: 0,    // Start with zero opacity
     duration: 3,   // Duration of 3 seconds
   });
 
-  gsap.from(".buil-slide2-img", {
+  gsap.from(".blue-box-buil1 img", {
     x: 800,        // Start from 800px to the right
     opacity: 0,    // Start with zero opacity
     duration: 3,   // Duration of 3 seconds
     delay:1
   });
+
+
+  gsap.from(".orange-box-buil3", {
+    x: 800,        // Start from 800px to the right
+    opacity: 0,    // Start with zero opacity
+    duration: 3,   // Duration of 3 seconds
+  });
+
+  gsap.from(".orange-box-buil3 img", {
+    x: 800,        // Start from 800px to the right
+    opacity: 0,    // Start with zero opacity
+    duration: 3,   // Duration of 3 seconds
+    delay:1
+  });
+
+
+  
+
+
+
+  
   
   // gsap.to(".h-slide1-img", {
   //   x: -300,        // Start from 800px to the right

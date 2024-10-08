@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Box with Overflowing Image</title>
+    <!-- Bootstrap CSS (Optional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .red-box {
+            background-color: red; /* Red background */
+            padding: 50px; /* 50px padding on all sides */
+            position: relative; /* Needed for the image to overflow properly */
+            overflow: visible; /* Allow overflow */
+        }
+
+        .red-box img {
+            position: relative; /* Keep image position relative to the container */
+            margin-left: -128px; /* Move the image 30px to the left */
+            max-width: calc(100% + 128px); /* Compensate for the negative margin */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+         /* Mobile responsive styles */
+         @media (max-width: 768px) { /* Breakpoint for mobile screens */
+            .red-box {
+                background-color: red;
+                padding: 16px;
+                position: relative;
+                overflow: visible;
+                margin-left: 113px;
+            }
+
+            
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="red-box">
+        <!-- Replace with your image URL -->
+        <img src="assets/images/ci-building-1.jpg" alt="Placeholder Image">
+    </div>
+</div>
+
+</body>
+</html>
