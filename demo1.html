@@ -3,46 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Box with Overflowing Image</title>
-    <!-- Bootstrap CSS (Optional) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Slick Slider - 3 Slides with More Visibility on Sides</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
-        .red-box {
-            background-color: red; /* Red background */
-            padding: 50px; /* 50px padding on all sides */
-            position: relative; /* Needed for the image to overflow properly */
-            overflow: visible; /* Allow overflow */
+        /* Style for the overall slider */
+        .slider {
+            width: 80%; /* Control the overall width of the slider */
+            margin: 0 auto; /* Center the slider */
+            overflow: hidden; /* Hide overflow to control visibility */
         }
 
-        .red-box img {
-            position: relative; /* Keep image position relative to the container */
-            margin-left: -128px; /* Move the image 30px to the left */
-            max-width: calc(100% + 128px); /* Compensate for the negative margin */
-            height: auto; /* Maintain aspect ratio */
+        /* Slick list container */
+        .slick-list {
+            overflow: visible; /* Allow slides to overflow */
+            padding: 0; /* Remove default padding */
         }
 
-         /* Mobile responsive styles */
-         @media (max-width: 768px) { /* Breakpoint for mobile screens */
-            .red-box {
-                background-color: red;
-                padding: 16px;
-                position: relative;
-                overflow: visible;
-                margin-left: 113px;
-            }
+        /* Individual slide */
+        .slick-slide img {
+            width: 100%; /* Ensure images take full slide width */
+            border-radius: 10px; /* Optional styling for rounder edges */
+        }
 
-            
+        /* General slide styling */
+        .slick-slide {
+            transform: scale(0.9); /* Scale down non-center slides */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Style for center slide */
+        .slick-center {
+            transform: scale(1); /* Full size for center slide */
+            opacity: 1; /* Fully visible center slide */
+        }
+
+        /* Make side slides more visible */
+        .slick-slide:not(.slick-center) {
+            opacity: 0.8; /* Higher opacity for side slides */
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="red-box">
-        <!-- Replace with your image URL -->
-        <img src="assets/images/ci-building-1.jpg" alt="Placeholder Image">
-    </div>
+<div class="slider">
+    <div><img src="assets/images/ci-home-1.jpg" alt="Slide 1"></div>
+    <div><img src="assets/images/ci-home-2.jpg" alt="Slide 2"></div>
+    <div><img src="assets/images/ci-home-1.jpg" alt="Slide 3"></div>
+    <div><img src="assets/images/ci-home-2.jpg" alt="Slide 4"></div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            centerMode: true,               // Enable center mode
+            centerPadding: '250px',         // Increase center padding to show more of the left and right slides
+            slidesToShow: 1,                // Show 3 slides at a time
+            infinite: true,                 // Enable infinite loop
+            focusOnSelect: true,            // Focus on center slide when clicked
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,    // Show 1 slide at a time on smaller screens
+                        centerMode: true,
+                        centerPadding: '50px' // Adjust center padding for smaller screens
+                    }
+                }
+            ]
+        });
+    });
+</script>
 
 </body>
 </html>
