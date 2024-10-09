@@ -1,6 +1,30 @@
+  // GSAP Timeline Animation for all hero slider 
+  const tl = gsap.timeline();
+
+  // 1. Slide the wrapper in from the left
+  tl.to(".wrapper", {
+      duration: 1.5,
+      x: 0, // Moves wrapper to its original position
+      ease: "power4.out"
+  })
+
+  // 2. Reveal the image by animating the .image-reveal div
+  .to(".image-reveal", {
+      duration: 1.5,
+      scaleX: 0, // Scale the div to 0 to reveal the image
+      transformOrigin: "left",
+      ease: "power2.out"
+  });
+  // GSAP Timeline Animation for all hero slider 
 
 
 
+
+
+
+  
+
+  
  // Home page slider 1 //
 
 $(document).ready(function(){
