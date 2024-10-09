@@ -30,7 +30,45 @@
     <meta property='twitter:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
 
     <!-- Google tag (gtag.js) -->
+<style>
 
+
+     /* Style for the overall slider */
+     .slider-sp {
+        width: 100%; /* Control the overall width of the slider */
+        margin: 0 auto; /* Center the slider */
+        overflow: hidden; /* Hide overflow to control visibility */
+    }
+
+    /* Slick list container */
+    .slider-sp .slick-list {
+        overflow: visible; /* Allow slides to overflow */
+        padding: 0; /* Remove default padding */
+    }
+
+    /* Individual slide */
+    .slider-sp .slick-slide img {
+        width: 100%; /* Ensure images take full slide width */
+        border-radius: 10px; /* Optional styling for rounder edges */
+    }
+
+    /* General slide styling */
+    .slider-sp .slick-slide {
+        transform: scale(0.9); /* Scale down non-center slides */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Style for center slide */
+    .slider-sp .slick-center {
+        transform: scale(1); /* Full size for center slide */
+        opacity: 1; /* Fully visible center slide */
+    }
+
+    /* Make side slides more visible */
+    .slider-sp .slick-slide:not(.slick-center) {
+        opacity: 0.8; /* Higher opacity for side slides */
+    }
+</style>
 </head>
 <body>
 
@@ -154,7 +192,7 @@
         <div class="row ptd4 ptm4 pbd4 pbm4">
             <div class="col-lg-12">
                 <h3>Local Area</h3>
-                <div class="slider">
+                <div class="slider-sp">
                     <div><img src="assets/images/ci-home-1.jpg" alt="Slide 1"></div>
                     <div><img src="assets/images/ci-home-2.jpg" alt="Slide 2"></div>
                     <div><img src="assets/images/ci-home-1.jpg" alt="Slide 3"></div>
@@ -249,7 +287,28 @@
     <script type="text/javascript" src="assets/js/scripts.js"></script>
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
 
+<script>
 
+$(document).ready(function(){
+    $('.slider-sp').slick({
+        centerMode: true,               // Enable center mode
+        centerPadding: '250px',         // Increase center padding to show more of the left and right slides
+        slidesToShow: 1,                // Show 3 slides at a time
+        infinite: true,                 // Enable infinite loop
+        focusOnSelect: true,            // Focus on center slide when clicked
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,    // Show 1 slide at a time on smaller screens
+                    centerMode: true,
+                    centerPadding: '50px' // Adjust center padding for smaller screens
+                }
+            }
+        ]
+    });
+});
+</script>
 
 
     <script>

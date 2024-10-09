@@ -91,22 +91,3 @@ $(window).on('scroll', function() {
  // Floor plan Custom Js for calculation //
 
 
- $(document).ready(function(){
-    $('.slider').slick({
-        centerMode: true,               // Enable center mode
-        centerPadding: '250px',         // Increase center padding to show more of the left and right slides
-        slidesToShow: 1,                // Show 3 slides at a time
-        infinite: true,                 // Enable infinite loop
-        focusOnSelect: true,            // Focus on center slide when clicked
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,    // Show 1 slide at a time on smaller screens
-                    centerMode: true,
-                    centerPadding: '50px' // Adjust center padding for smaller screens
-                }
-            }
-        ]
-    });
-});
