@@ -6,11 +6,6 @@
 /* ---------------------------------------------- */
 /* VARIABLES
 /* ---------------------------------------------- */
-
-body{
-    overflow-x: hidden;
-}
-
 :root {
     --blue: #0048C6;
     --teal: #62BCB3;
@@ -27,77 +22,50 @@ body{
     --edgewater: #CAE2E0;
 }
 
+/* ---------------------------------------------- */
+/* @FONT-FACE
+/* ---------------------------------------------- */
 
-
-.normal-image {
-    display: block; /* Show normal image by default */
-}
-.fixed-image {
-    display: none; /* Hide fixed image by default */
-}
-
-.home-slide-1{
-
-    position: relative;
-
+@font-face {
+    font-family: 'Altform-Regular';
+    src: url('../fonts/Altform-Regular.woff2') format('woff2'),
+    url('../fonts/Altform-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-.slide-con1 {
-    width: 87%;
-    height: 95%;
-    background-color: var(--orange);
-    position: absolute;
-    z-index: -1;
-    left: 80px;
-    top: 12px;
-}
-.h-slide1-img {
-    position: absolute;
-    right: 8px;
-    width: 100%;
-    height: 100%;
-    padding: 50px;
+@font-face {
+    font-family: 'Altform-Bold';
+    src: url('../fonts/Altform-Bold.woff2') format('woff2'),
+    url('../fonts/Altform-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 
-.buildingSection .theBuildingSlider .sliderItem {
-    padding: 4px;
+
+
+
+
+/* universal header code */
+
+#fixedLogo{
+    display: none;
 }
 
-.buildingSection img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    padding: inherit;
-}
-
-.theBuildingSlider {
-    margin: 0 -350px;
-  
-}
+/* universal header code */
 
 
-.buildingSection{
-   padding-bottom: 150px;
-}
 
 
-.build-prev{
-    position: absolute;
-    z-index: 4;
-    top: 10px;
-    right: 50px;
-}
 
 
-.build-next{
-    position: absolute;
-    z-index: 4;
-    top: 10px;
-    right: 30px;
-}
 
-/* index slick */
+
+
+/* index  custom slide slick */
 .slick-dots {
     position: absolute;
     bottom: -25px;
@@ -128,138 +96,13 @@ body{
 .slick-dots li:hover{
     background-color: var(--orange);
 }
-/* index slick */
 
-.key-facts{
-    margin: 0px  !important;
-    padding: 70px ;
-  
-}
-
-.local-area{
-    margin: 0px  !important;
-    padding: 70px ;
-}
+/* index  custom slide slick */
 
 
 
 
-.buil-four{
-    position: relative;
-}
 
-
-.buil-slide-con2 {
-    width: 90%;
-    height: 100%;
-    background-color: var(--blue);
-    position: absolute;
-    z-index: -1;
-   
-    
-}
-
-
-
-
-.red-box-home1 {
-    background-color: red; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.red-box-home1 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-left: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.yellow-box-home2 {
-    background-color: #FF9222; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.yellow-box-home2 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-left: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.blue-box-buil1 {
-    background-color: #0048C6; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.blue-box-buil1 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-right: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
-
-
-.cyan-box-buil2 {
-    background-color: #168771; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.cyan-box-buil2 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-left: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.orange-box-buil3 {
-    background-color: #FF4602; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.orange-box-buil3 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-right: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.blue-box-location1 {
-    background-color: #0048C6; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.blue-box-location1 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-left: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.cyan-box-contact1 {
-    background-color: #62BCB3; /* Red background */
-    padding: 50px; /* 50px padding on all sides */
-    position: relative; /* Needed for the image to overflow properly */
-    overflow: visible; /* Allow overflow */
-}
-
-.cyan-box-contact1 img {
-    position: relative; /* Keep image position relative to the container */
-    margin-left: -128px; /* Move the image 30px to the left */
-    max-width: calc(100% + 128px); /* Compensate for the negative margin */
-    height: auto; /* Maintain aspect ratio */
-}
 
 
 

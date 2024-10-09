@@ -14,12 +14,8 @@
     <link href="assets/css/slick-theme.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom.css?v=1.0.0" rel="stylesheet">
     <link href="assets/css/style.css?v=1.0.0" rel="stylesheet">
-    <link href="assets/css/media.css?v=1.0.0" rel="stylesheet">
     <link href="assets/images/favicon.png" rel="shortcut icon">
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-
 
     <!-- Open Graph -->
     <meta property='og:title' content='Brettenham House' />
@@ -33,59 +29,7 @@
     <meta property='twitter:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
 
     <!-- Google tag (gtag.js) -->
-<style>
 
-
-
-
-
-
-        .wrapper {
-            position: relative;
-            position: relative;
-           
-            width:100%;
-            height: 600px;
-            margin-left: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-           
-            background-color: #FF4602; /* Red wrapper background */
-            overflow: hidden;
-            transform: translateX(-100%); /* Start off-screen */
-        }
-
-        .image-wrapper {
-            position: relative;
-            width: 100%; /* Smaller than wrapper */
-            height:100%; /* Smaller than wrapper */
-            margin: auto;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .image-reveal {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:  #FF4602; /* Red reveal background */
-            transform-origin: left;
-            transform: scaleX(1); /* Start with cover */
-        }
-
-        .image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            padding: 50px;
-
-        }
-
-        
-</style>
 </head>
 <body>
 
@@ -124,20 +68,11 @@
 
     <div class="nav-spacer"></div>
 
-   
-
     <div class="container">
         <div class="row ptd2 pbd6 pbm6">
             <div class="col-lg-10 offset-lg-1">
-                <div class="wrapper d-none d-md-block">
-                    <div class="image-wrapper">
-                        <div class="image-reveal"></div>
-                        <img src="assets/images/08-large.jpg" alt="Revealed Image" class="image">
-                    </div>
-                </div>
-                <img src="assets/images/building-image-desktop-1.jpg" alt="The Building - Brettenham House" class="img-fluid img-fluid d-none">
+                <img src="assets/images/building-image-desktop-1.jpg" alt="The Building - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
                 <img src="assets/images/building-image-mobile-1.jpg" alt="The Building - Brettenham House" class="img-fluid d-lg-none">
-           
             </div>
             <div class="col-lg-1">
                 <h1 class="rotate trm">The Building</h1>
@@ -158,39 +93,15 @@
     <div class="container">
         <div class="row ptd4 ptm4 pbd4 pbm4">
             <div class="col-lg-12">
-                <div class="slider-2">
-                    <div><img src="assets/images/ci-home-1.jpg" alt="Brettenham House" class="img-fluid" /></div>
-                    <div><img src="assets/images/ci-home-2.jpg" alt="Brettenham House" class="img-fluid" /></div>
+                <div class="slider-1">
+                    <div><img src="assets/images/ci-building-1.jpg" alt="Brettenham House" class="img-fluid" /></div>
+                    <div><img src="assets/images/ci-building-2.jpg" alt="Brettenham House" class="img-fluid" /></div>
                 </div>
             </div>
-            
         </div>
     </div>
 
-
-
-
-    <div class="buildingSection">
-        <div class="container position-relative">
-           
-                <h3>Local Area</h3>
-           
-            <div class="theBuildingSlider key-facts  text-center bg-mustard ptd4 pbd1 ptm6 pbm1">
-                <div><h2>STUNNING</h2><p>RIVER VIEWS</p></div>
-                <div><h2>OPENABLE</h2><p>WINDOWS</p></div>
-                <div><h2>6,600</h2><p>SQ FT OF OUTDOOR<br>TERRACE SPACE</p></div>
-                <div><h2>STUNNING</h2><p>RIVER VIEWS</p></div>
-                <div><h2>OPENABLE</h2><p>WINDOWS</p></div>
-                <div><h2>6,600</h2><p>SQ FT OF OUTDOOR<br>TERRACE SPACE</p></div>
-
-            </div>
-
-
-            <i class='fa fa-chevron-left build-prev'></i>
-            <i class='fa fa-chevron-right build-next'></i>
-        </div>
-    </div>
-    <!-- <div class="container">
+    <div class="container">
         <div class="row ptd2 ptm2 pbd4 pbm4">
             <div class="col-lg-3 ptd3 ptm2">
                 <h3>Key Facts</h3>
@@ -204,165 +115,44 @@
                     <div><h2>OPENABLE</h2><p>WINDOWS</p></div>
                     <div><h2>6,600</h2><p>SQ FT OF OUTDOOR<br>TERRACE SPACE</p></div>
                 </div>
-                
             </div>
-            
         </div>
-    </div> -->
+    </div>
 
-    <!-- <div class="container">
-        <div class="row ptm2 pbd4 pbm4">
-            <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 home-slide-1">
-                <div class="slide-con1"></div>
-                <img src="assets/images/ci-building-2.jpg" alt="Photograph of Brettenham House" class="img-fluid img-fluid d-none d-lg-block h-slide1-img">
-                <img src="assets/images/home-image-mobile-2.jpg" alt="Photograph of Brettenham House" class="img-fluid d-lg-none">
-            </div>
-            <div class="col-lg-3 order-lg-0 ptd3 ptm2">
-               
-            </div>
-        </div>
-    </div> -->
-  
     <div class="container">
-        <div class="row">
-            <div class="col-lg-1">
-                <h1 class="rotate trm">panoramic views</h1>
+        <div class="row pbd6 pbm6">
+            <div class="col-lg-12">
+                <h3>Panoramic Views</h3>
+                <img src="assets/images/building-image-desktop-2.jpg" alt="Panoramic Views - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                <img src="assets/images/building-image-mobile-2.jpg" alt="Panoramic Views - Brettenham House" class="img-fluid d-lg-none">
             </div>
-
-            <div class="col-lg-10">
-                <div class="blue-box-buil1">
-                    <!-- Replace with your image URL -->
-                    <img src="assets/images/ci-buil-panaromic.jpg" alt="Placeholder Image">
-                </div>
-            </div>
-           
-        </div>
-       
-    </div>
-
-    <div class="container position-relative">
-        <div class="slick-slider">
-            <div class="slide">
-                <div class="row ptd2 ptm2 pbd4 pbm4">
-
-                    <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 d-flex align-items-start flex-column">
-                        <div class="cyan-box-buil2">
-                            <!-- Replace with your image URL -->
-                            <img src="assets/images/ci-buil2.jpg" alt="Placeholder Image">
-                        </div>
-                    </div>
-        
-                    <div class="col-lg-3 order-lg-0 ptd3 ptm2 d-flex align-items-start flex-column">
-                        <div class="mb-auto">
-                            <h3>Terraces</h3>
-                            <div>
-                                <p>The 9th floor houses two impressive terraces with some of London’s best views, thanks to the building’s prime position on the elbow of the River Thames. The north terrace is intended for communal use, accessible to all occupiers in the building. Sensitively landscaped by Townshend, this space offers a stunning amenity for occupiers on a day to day basis or a wonderful location for a one off party or&nbsp;event.</p>
-                            </div>
-                        </div>
-                        <div class="pbd3 ptm2">
-                            <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"> 1/4 <img src="assets/images/btn-arrow-right.svg" alt="Right Arrow">
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="row ptd2 ptm2 pbd4 pbm4">
-
-                    <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 d-flex align-items-start flex-column">
-                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                        <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
-                    </div>
-        
-                    <div class="col-lg-3 order-lg-0 ptd3 ptm2 d-flex align-items-start flex-column">
-                        <div class="mb-auto">
-                            <h3>Terraces</h3>
-                            <div>
-                                <p>The 9th floor houses two impressive terraces with some of London’s best views, thanks to the building’s prime position on the elbow of the River Thames. The north terrace is intended for communal use, accessible to all occupiers in the building. Sensitively landscaped by Townshend, this space offers a stunning amenity for occupiers on a day to day basis or a wonderful location for a one off party or&nbsp;event.</p>
-                            </div>
-                        </div>
-                        <div class="pbd3 ptm2">
-                            <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"> 1/4 <img src="assets/images/btn-arrow-right.svg" alt="Right Arrow">
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="row ptd2 ptm2 pbd4 pbm4">
-
-                    <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 d-flex align-items-start flex-column">
-                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                        <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
-                    </div>
-        
-                    <div class="col-lg-3 order-lg-0 ptd3 ptm2 d-flex align-items-start flex-column">
-                        <div class="mb-auto">
-                            <h3>Terraces</h3>
-                            <div>
-                                <p>The 9th floor houses two impressive terraces with some of London’s best views, thanks to the building’s prime position on the elbow of the River Thames. The north terrace is intended for communal use, accessible to all occupiers in the building. Sensitively landscaped by Townshend, this space offers a stunning amenity for occupiers on a day to day basis or a wonderful location for a one off party or&nbsp;event.</p>
-                            </div>
-                        </div>
-                        <div class="pbd3 ptm2">
-                            <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"> 1/4 <img src="assets/images/btn-arrow-right.svg" alt="Right Arrow">
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="row ptd2 ptm2 pbd4 pbm4">
-
-                    <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 d-flex align-items-start flex-column">
-                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                        <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
-                    </div>
-        
-                    <div class="col-lg-3 order-lg-0 ptd3 ptm2 d-flex align-items-start flex-column">
-                        <div class="mb-auto">
-                            <h3>Terraces</h3>
-                            <div>
-                                <p>The 9th floor houses two impressive terraces with some of London’s best views, thanks to the building’s prime position on the elbow of the River Thames. The north terrace is intended for communal use, accessible to all occupiers in the building. Sensitively landscaped by Townshend, this space offers a stunning amenity for occupiers on a day to day basis or a wonderful location for a one off party or&nbsp;event.</p>
-                            </div>
-                        </div>
-                        <div class="pbd3 ptm2">
-                            <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"> 1/4 <img src="assets/images/btn-arrow-right.svg" alt="Right Arrow">
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-           
-        </div>
-        
-    </div>
-
-
-    <div class="buildingSection">
-        <div class="container position-relative">
-           
-                <h3>Local Area</h3>
-            
-           
-            <div class="theBuildingSlider local-area text-center bg-teal ptd4 pbd4 ptm4 pbm5">
-                <div><img src="assets/images/logo-breeam.svg" alt="Targeting BREEAM Outstanding"></div>
-                <div><img src="assets/images/logo-nabers.svg" alt="NABERS 5* Rating"></div>
-                <div><img src="assets/images/logo-net-zero.svg" alt="Net Zero Carbon Building"></div>
-                <div><img src="assets/images/logo-breeam.svg" alt="Targeting BREEAM Outstanding"></div>
-                <div><img src="assets/images/logo-nabers.svg" alt="NABERS 5* Rating"></div>
-                <div><img src="assets/images/logo-net-zero.svg" alt="Net Zero Carbon Building"></div>
-            </div>
-
-
-            <i class='fa fa-chevron-left build-prev'></i>
-            <i class='fa fa-chevron-right build-next'></i>
         </div>
     </div>
 
-    <!-- <div class="container">
+    <div class="container">
+        <div class="row ptd2 ptm2 pbd4 pbm4">
+
+            <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4 d-flex align-items-start flex-column">
+                <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+            </div>
+
+            <div class="col-lg-3 order-lg-0 ptd3 ptm2 d-flex align-items-start flex-column">
+                <div class="mb-auto">
+                    <h3>Terraces</h3>
+                    <div>
+                        <p>The 9th floor houses two impressive terraces with some of London’s best views, thanks to the building’s prime position on the elbow of the River Thames. The north terrace is intended for communal use, accessible to all occupiers in the building. Sensitively landscaped by Townshend, this space offers a stunning amenity for occupiers on a day to day basis or a wonderful location for a one off party or&nbsp;event.</p>
+                    </div>
+                </div>
+                <div class="pbd3 ptm2">
+                    <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"> 1/4 <img src="assets/images/btn-arrow-right.svg" alt="Right Arrow">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
         <div class="row ptd2 ptm2 pbd4 pbm4">
             <div class="col-lg-3 ptd3 ptm2">
                 <h3>Sustainability</h3>
@@ -378,15 +168,13 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <div class="container">
         <div class="row ptd2 ptm2 pbd4 pbm4">
             <div class="col-lg-8 order-lg-0 pbm4">
-                <div class="orange-box-buil3">
-                    <!-- Replace with your image URL -->
-                    <img src="assets/images/ci-building-1.jpg" alt="Placeholder Image">
-                </div>
+                <img src="assets/images/building-image-desktop-4.jpg" alt="History - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                <img src="assets/images/building-image-mobile-4.jpg" alt="History - Brettenham House" class="img-fluid d-lg-none">
             </div>
             <div class="col-lg-3 offset-lg-1 order-lg-1 ptd3 ptm2">
                 <h3>History</h3>
@@ -481,40 +269,19 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        // GSAP Timeline Animation
-        const tl = gsap.timeline();
-
-        // 1. Slide the wrapper in from the left
-        tl.to(".wrapper", {
-            duration: 1.5,
-            x: 0, // Moves wrapper to its original position
-            ease: "power4.out"
-        })
-
-        // 2. Reveal the image by animating the .image-reveal div
-        .to(".image-reveal", {
-            duration: 1.5,
-            scaleX: 0, // Scale the div to 0 to reveal the image
-            transformOrigin: "left",
-            ease: "power2.out"
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="assets/js/scripts.js"></script>
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
     <script>
         $(document).ready(function(){
-            $('.slider-2').slick({
+            $('.slider-1').slick({
                 dots: true,
                 infinite: true,
                 speed: 300,
                 autoplay: true,
-                arrows: false,
+                arrows: true,
                 autoplaySpeed: 5000,
                 cssEase:"cubic-bezier(0.2, 0.4, 0.4, 0.9)",
                 swipeToSlide: true,
@@ -523,7 +290,7 @@
         });
     </script>
 
-    <!-- <script>
+    <script>
         $(document).ready(function(){
             $('.slider-key-facts').slick({
                 dots: true,
@@ -557,40 +324,7 @@
                 accessibility: true
             });
         });
-    </script> -->
-
-    <script>
-        $('.theBuildingSlider').slick({
-         infinite: true,
-         loop: true,
-         slidesToShow: 3,
-         slidesToScroll: 1,
-         arrow: true,
-         autoplay: true,
-         autoplaySpeed: 1000,
-         pauseOnHover: false,
-         prevArrow: $(".build-prev"),
-         nextArrow: $(".build-next"),
-         responsive: [
-             {
-               breakpoint: 991,
-               settings: {
-                 slidesToShow: 2,
-                 slidesToScroll: 1,
-                 infinite: true,
-               }
-             },
-             {
-               breakpoint: 767,
-               settings: {
-                 slidesToShow: 3,
-                 slidesToScroll: 1,
-                 infinite: true,
-               }
-             },
-         ],
-     });
-     </script>
+    </script>
 
     <script>
         $(document).ready(function(){
@@ -628,35 +362,6 @@
             });
         });
     </script>
-
-
-<script>
-    $(document).ready(function(){
-    $('.slick-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        infinite: true,
-        autoplay: false,
-        prevArrow: '<img src="assets/images/btn-arrow-left.svg" class="slick-prev" alt="Previous">',
-        nextArrow: '<img src="assets/images/btn-arrow-right.svg" class="slick-next" alt="Next">'
-    });
-});
-
-</script>
-
-<script>
-    $(window).on('scroll', function() {
-        if ($(this).scrollTop() > 50) {
-            $('#normalLogo').hide();
-            $('#fixedLogo').show();
-        } else {
-            $('#normalLogo').show();
-            $('#fixedLogo').hide();
-        }
-    });
-</script>
 
 </body>
 </html>
