@@ -262,7 +262,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 
+<script>
 
+    // This code use for hide and show the top header //
+
+$(window).on('scroll', function() {
+if ($(this).scrollTop() > 50) {
+   $('#normalLogo').hide();
+   $('#fixedLogo').show();
+} else {
+   $('#normalLogo').show();
+   $('#fixedLogo').hide();
+}
+});
+
+// This code use for hide and show the top header //
+
+
+</script>
 
     <script>
         $(document).ready(function(){
