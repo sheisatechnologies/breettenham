@@ -71,7 +71,17 @@
     <div class="container">
         <div class="row ptd2 pbd6 pbm6">
             <div class="col-lg-10 offset-lg-1">
-                <img src="assets/images/contact-image-desktop-1.jpg" alt="Location - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+
+                <div class="mask-container d-none d-lg-block">
+                    <!-- Wrapper that contains the image with padding -->
+                    <div class="wrapper-buil bg-contact">
+                        <!-- Red reveal div that is larger than the image container -->
+                        <div class="image-reveal-buil bg-contact"></div>
+                        <img class="img-fluid img-fluid" src="assets/images/contact_first.jpg" alt="Hero Image">
+                    </div>
+                </div>
+
+               
                 <img src="assets/images/contact-image-mobile-1.jpg" alt="Location - Brettenham House" class="img-fluid d-lg-none">
             </div>
             <div class="col-lg-1">
@@ -233,6 +243,10 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Full-Width Image Reveal Animation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 200vh; /* Increased height for scrolling */
+            background-color: #f0f0f0; /* Background color for contrast */
+        }
+
+        .container-fluid {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide overflow for reveal effect */
+        }
+
+        .row {
+            width: 100%; /* Full width of the row */
+            height: 100%; /* Full height of the row */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden; /* Hide overflow for reveal effect */
+            width: 100%; /* Full width */
+            max-width: 1200px; /* Maximum width */
+            height: 600px; /* Height of the container */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Optional shadow for visual depth */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Scale and crop to fill */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; /* Hide image initially */
+            z-index: 0; /* Image should be behind the reveal box */
+        }
+
+        .reveal-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            z-index: 1; /* Red box above the image */
+            transform: translateX(0); /* Initial position: cover the entire image */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bootstrap Container -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero alias adipisci repudiandae praesentium ex hic nostrum esse aliquam error soluta modi illum odit non explicabo, doloribus iure at? Veniam corporis suscipit, alias ad, possimus repellat eveniet at harum nobis placeat doloribus est? Eius alias quaerat error possimus atque molestias, eaque placeat rem sequi, dolore quasi. Velit itaque sunt iure soluta, nulla ut vel animi, quidem excepturi nemo doloribus? Dicta provident necessitatibus consequatur quasi, voluptatum accusamus molestias. Perspiciatis magnam praesentium, deleniti dolores dolorum, dolor, in ut maxime totam temporibus earum. Error molestiae voluptatibus autem itaque ducimus veniam, consequatur, ad, optio laborum consequuntur maxime corporis facilis sit quibusdam eos! Nam accusantium necessitatibus velit similique ab iusto voluptatem dolore repellendus eius architecto dolores, quas dolorem delectus laborum? Voluptatibus ab neque asperiores rem alias doloribus magni blanditiis! Id dolor unde incidunt quae mollitia quod asperiores quaerat aut eius esse iure nulla laboriosam minima, reprehenderit vel eaque ipsa fugit repellendus voluptates possimus optio accusamus deserunt. Explicabo distinctio, error ut eaque totam ipsum perspiciatis atque hic quam nam! Culpa dignissimos natus eum voluptatem esse quod laudantium, quo dolorem? Mollitia, voluptate dignissimos praesentium harum repellat sed odio quaerat obcaecati voluptates aliquid non tempora, neque cumque laudantium reprehenderit at. Eos distinctio aspernatur fugiat numquam dignissimos veniam nihil voluptatum ullam quam, earum beatae repellat officiis assumenda, cum consequuntur aliquam dolorum, enim magnam! Iure vitae aut veritatis voluptas illo iste, modi voluptates at alias incidunt veniam, nesciunt eaque ex, beatae soluta accusantium cupiditate! Aliquid excepturi vel eaque repellendus totam voluptas. Quidem praesentium, perferendis pariatur placeat quibusdam consequuntur voluptatum? Nihil eveniet earum suscipit, voluptatem provident error dolores quod? Consectetur repellat iste nam eaque officiis accusamus voluptatem sapiente natus error id dignissimos exercitationem perferendis delectus nisi provident quasi, ea atque magnam? Dolor nostrum sapiente ut quod reprehenderit officia modi, nesciunt reiciendis illo voluptates impedit molestiae vero molestias. Dolore cupiditate officiis adipisci architecto autem sint laudantium dicta in ipsum sit blanditiis accusamus maiores voluptas voluptatibus magni libero eaque ducimus saepe nihil distinctio, molestias, odit itaque rem. Modi dolor error repellat necessitatibus illum est dolorum natus nam provident, reprehenderit animi molestias nostrum et labore hic mollitia saepe repellendus nesciunt. Deserunt doloremque cum iste omnis! Sit reprehenderit officia sunt illum aliquid enim corporis distinctio esse quod, autem quia! Eos ducimus sit sapiente aliquam iusto voluptatum facere sed repudiandae ratione quo quam et beatae nostrum vel, id enim? Minima dignissimos, distinctio deserunt est explicabo ratione aliquam esse! Expedita modi porro dicta, officiis totam harum autem pariatur voluptatibus cupiditate, necessitatibus, ipsum eveniet ipsam! Illum odio itaque fugit eaque iusto aut sapiente, recusandae assumenda omnis quidem vel quibusdam impedit eius, adipisci minus delectus, corrupti a. Tempore minima quod quis laborum perspiciatis repudiandae neque, numquam consequuntur esse! Corrupti tempora ea eveniet laborum distinctio eaque eligendi veniam expedita, necessitatibus officiis porro vero non ab id nesciunt optio possimus in blanditiis eum facere libero nobis, quidem reprehenderit nihil. Asperiores nam omnis officiis, facere laborum, dolorem voluptatum qui reiciendis aliquid officia error sapiente provident debitis quisquam laboriosam culpa quibusdam quas pariatur quasi.</p>
+            <div class="image-container">
+                <div class="reveal-box"></div> <!-- Red overlay for revealing -->
+                <img src="https://via.placeholder.com/1200x600" alt="Hidden Image" class="image"> <!-- Hidden image -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS & dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // GSAP animation to reveal the image
+    gsap.to(".reveal-box", {
+        x: "100%", // Move the red box out to the right to reveal the image
+        duration: 1.5, // Duration of the animation
+        ease: "power2.out", // Easing function
+        scrollTrigger: {
+            trigger: ".container-fluid", // Trigger animation when the container-fluid is in view
+            start: "top 80%", // Start animation when top of container reaches 80% of viewport height
+            end: "top 50%", // End animation when top of container reaches 50% of viewport height
+            toggleActions: "play none none reverse", // Play on enter, and reverse on leave
+            scrub: true, // Smooth animation controlled by scrolling
+            markers: true // Debug markers (remove in production)
+        },
+        onStart: function () {
+            // Make image visible when animation starts
+            gsap.to(".image", { opacity: 1, duration: 0.3 });
+        }
+    });
+</script>
+
+</body>
+</html>

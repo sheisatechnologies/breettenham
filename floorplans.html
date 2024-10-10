@@ -102,7 +102,15 @@
     <div class="container">
         <div class="row ptd2 pbd6 pbm6">
             <div class="col-lg-10 offset-lg-1">
-                <img src="assets/images/floorplans-image-desktop-1.png" alt="Location - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                <div class="mask-container d-none d-lg-block">
+                    <!-- Wrapper that contains the image with padding -->
+                    <div class="wrapper-buil bg-floorplan">
+                        <!-- Red reveal div that is larger than the image container -->
+                        <div class="image-reveal-buil bg-floorplan"></div>
+                        <img src="assets/images/floorpan_first.jpg" alt="Hero Image">
+                    </div>
+                </div>
+                <!-- <img src="assets/images/floorplans-image-desktop-1.png" alt="Location - Brettenham House" class="img-fluid img-fluid d-none d-lg-block"> -->
                 <img src="assets/images/floorplans-image-mobile-1.png" alt="Location - Brettenham House" class="img-fluid d-lg-none">
             </div>
             <div class="col-lg-1">
@@ -631,11 +639,50 @@
         </div>
     </footer>
 
+
+     <!-- GSAP CDN -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
+     
+
+   
+
+<script type="text/javascript" src="assets/js/scripts.js"></script>
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+   
 
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
+
+    <script>
+
+        // Floor plan Custom Js for calculation //
+      
+    
+    let totalSum = 0;
+   
+   // Function to toggle the value of the clicked cell between adding and subtracting
+   function toggleValue(cell) {
+       let cellValue = parseFloat(cell.textContent.replace(/,/g, '')); // Remove commas and convert to number
+   
+       // Check if the cell has been clicked previously (toggle on/off)
+       if (cell.classList.contains('clicked')) {
+           // If cell is already clicked, subtract its value from the total
+           totalSum -= cellValue;
+           cell.classList.remove('clicked'); // Remove the clicked class to indicate deselection
+       } else {
+           // If cell is not clicked, add its value to the total
+           totalSum += cellValue;
+           cell.classList.add('clicked'); // Add the clicked class to indicate selection
+       }
+   
+       // Update the sum display
+       document.getElementById('sumCell').textContent = totalSum.toLocaleString();
+   }
+   
+   // Floor plan Custom Js for calculation //
+   
+   </script>
 
     <script>
         $(document).ready(function(){

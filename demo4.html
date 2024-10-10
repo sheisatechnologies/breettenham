@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP ScrollTrigger Image Reveal</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Increase height to enable scrolling */
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Flex container to position image and paragraph side by side */
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px; /* Space between image and paragraph */
+            padding: 50px; /* Added padding for spacing */
+        }
+
+        /* Wrapper to contain image and red reveal container */
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 600px; /* Increased width */
+            height: 400px; /* Increased height */
+            flex-shrink: 0;
+        }
+
+        /* Red container to cover the image */
+        .image-reveal {
+            position: absolute;
+            top: 0;
+            right: 0; /* Positioned on the right */
+            width: 100%;
+            height: 100%;
+            background: red; /* Red reveal container */
+            transform: translateX(0); /* Start fully covering the image */
+            z-index: 1; /* Ensure it is on top of the image */
+        }
+
+        /* Image styling */
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Paragraph styling */
+        .text-content {
+            max-width: 400px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        This is a simple scroll-triggered animation that reveals an image as you scroll down.
+        The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+        uncover the image smoothly.
+    </p><p>
+        This is a simple scroll-triggered animation that reveals an image as you scroll down.
+        The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+        uncover the image smoothly.
+    </p><p>
+        This is a simple scroll-triggered animation that reveals an image as you scroll down.
+        The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+        uncover the image smoothly.
+    </p><p>
+        This is a simple scroll-triggered animation that reveals an image as you scroll down.
+        The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+        uncover the image smoothly.
+    </p><p>
+        This is a simple scroll-triggered animation that reveals an image as you scroll down.
+        The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+        uncover the image smoothly.
+    </p><p>
+                This is a simple scroll-triggered animation that reveals an image as you scroll down.
+                The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+                uncover the image smoothly.
+            </p>
+    <!-- Container for image and paragraph -->
+    <div class="container">
+        <!-- Image wrapper with red reveal -->
+        <div class="image-wrapper">
+            <div class="image-reveal"></div>
+            <img src="https://via.placeholder.com/600x400" alt="Image Reveal">
+        </div>
+
+        <!-- Paragraph content on the right -->
+        <div class="text-content">
+            <h1>Image Reveal Animation</h1>
+            <p>
+                This is a simple scroll-triggered animation that reveals an image as you scroll down.
+                The animation is controlled using GSAP and ScrollTrigger, moving a red overlay to
+                uncover the image smoothly.
+            </p>
+            <p>
+                Scroll down to see the animation in action. You can customize the effect further
+                by adjusting the animation parameters such as duration, easing, and scroll position.
+            </p>
+        </div>
+    </div>
+
+    <!-- GSAP and ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Register the ScrollTrigger plugin with GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Reveal animation using GSAP and ScrollTrigger
+        gsap.to(".image-reveal", {
+            scrollTrigger: {
+                trigger: ".image-wrapper",     // Trigger the animation when the .image-wrapper is in view
+                start: "top center",           // Start animation when .image-wrapper reaches center of viewport
+                end: "top 100px",              // End animation 100px from the top of the viewport
+                scrub: true,                   // Smooth scroll-based animation
+                markers: true                  // Enable markers for debugging (remove when not needed)
+            },
+            x: "-100%",                        // Move the red container out to the left
+            duration: 1,                       // Duration of the animation
+            ease: "power2.out"                 // Easing function for the animation
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<div class="image-wrapper">
+    <div class="image-reveal"></div>
+    <img src="assets/images/ci-building-1.jpg" alt="Image Reveal">
+</div>
+
+
+
+/* main animation for all image */
+
+
+     /* Wrapper to contain image and red reveal container */
+     .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 600px; /* Increased width */
+            height: 400px; /* Increased height */
+            flex-shrink: 0;
+            padding: 20px;
+        }
+
+        /* Red container to cover the image */
+        .image-reveal {
+            position: absolute;
+            top: 0;
+            right: 0; /* Positioned on the right */
+            width: 100%;
+            height: 100%;
+            background: red; /* Red reveal container */
+            transform: translateX(0); /* Start fully covering the image */
+            z-index: 1; /* Ensure it is on top of the image */
+        }
+
+        /* Image styling */
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Paragraph styling */
+        .text-content {
+            max-width: 400px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+
+        <!-- GSAP and ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+<script>
+    // Register the ScrollTrigger plugin with GSAP
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animation using GSAP and ScrollTrigger
+    gsap.to(".image-reveal", {
+        scrollTrigger: {
+            trigger: ".image-wrapper",     // Trigger the animation when the .image-wrapper is in view
+            start: "top center",           // Start animation when .image-wrapper reaches center of viewport
+            end: "top 100px",              // End animation 100px from the top of the viewport
+            scrub: true,                   // Smooth scroll-based animation
+            markers: true                  // Enable markers for debugging (remove when not needed)
+        },
+        x: "-100%",                        // Move the red container out to the left
+        duration: 1,                       // Duration of the animation
+        ease: "power2.out"                 // Easing function for the animation
+    });
+</script>

@@ -1,21 +1,66 @@
-  // GSAP Timeline Animation for all hero slider 
-  const tl = gsap.timeline();
 
-  // 1. Slide the wrapper in from the left
-  tl.to(".wrapper", {
-      duration: 1.5,
-      x: 0, // Moves wrapper to its original position
-      ease: "power4.out"
-  })
+// GSAP Timeline Animation for the wrapper reveal
+const tl = gsap.timeline();
 
-  // 2. Reveal the image by animating the .image-reveal div
-  .to(".image-reveal", {
-      duration: 1.5,
-      scaleX: 0, // Scale the div to 0 to reveal the image
-      transformOrigin: "left",
-      ease: "power2.out"
-  });
-  // GSAP Timeline Animation for all hero slider 
+// 1. Animate the wrapper from a specific point using scaling
+tl.to(".wrapper-buil", {
+    duration: 1.5,
+    scaleX: 1,             // Expand the wrapper horizontally from 0 to full width
+    ease: "power3.out",    // Ease animation to make it smooth
+})
+
+// 2. Reveal the image by animating the .image-reveal div
+.to(".image-reveal-buil", {
+    duration: 1,
+    scaleX: 0,             // Scale the red reveal div horizontally to 0 to reveal the image
+    transformOrigin: "left",
+    ease: "power2.out"
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// all red container image revel
+
+    // Register the ScrollTrigger plugin with GSAP
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Reveal animation using GSAP and ScrollTrigger
+    gsap.to(".image-reveal-ma", {
+        scrollTrigger: {
+            trigger: ".image-wrapper-ma",     // Trigger the animation when the .image-wrapper is in view
+            start: "top center",           // Start animation when .image-wrapper reaches center of viewport
+            end: "top 100px",              // End animation 100px from the top of the viewport
+            scrub: true,                   // Smooth scroll-based animation
+            markers: true                  // Enable markers for debugging (remove when not needed)
+        },
+        x: "-100%",                        // Move the red container out to the left
+        duration: 1,                       // Duration of the animation
+        ease: "power2.out"                 // Easing function for the animation
+    });
+
+
+
+
+
+
+
+   // all red container image revel
+   
+   
+
+
+
+
+
 
 
 
@@ -91,3 +136,24 @@ $(window).on('scroll', function() {
  // Floor plan Custom Js for calculation //
 
 
+ $(document).ready(function(){
+    $('.slider-sp').slick({
+        centerMode: true,               // Enable center mode
+        centerPadding: '360px',          // Increase center padding to show more of the left and right slides
+        slidesToShow: 1,                // Show 3 slides at a time
+        infinite: true,                 // Enable infinite loop
+        focusOnSelect: true,            // Focus on center slide when clicked
+        autoplay: true,                  // Enable auto-slide
+        autoplaySpeed: 2000,  
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,    // Show 1 slide at a time on smaller screens
+                    centerMode: true,
+                    centerPadding: '50px' // Adjust center padding for smaller screens
+                }
+            }
+        ]
+    });
+});

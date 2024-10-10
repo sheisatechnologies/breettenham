@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slick Slider - 3 Slides with More Visibility on Sides</title>
+    <title>Slick Slider - Control Buttons with Icons at Top Right</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-jLKHWM+sG1lfwrhjCZjI6qvFe1DZP0JZ+VxjzhI9loL7g5OCGbRvCmc19Bsdw+an" crossorigin="anonymous" />
+
     <style>
         /* Style for the overall slider */
         .slider {
             width: 80%; /* Control the overall width of the slider */
             margin: 0 auto; /* Center the slider */
             overflow: hidden; /* Hide overflow to control visibility */
+            position: relative; /* Relative positioning for custom controls */
         }
 
         /* Slick list container */
@@ -28,25 +31,54 @@
 
         /* General slide styling */
         .slick-slide {
-            transform: scale(0.9); /* Scale down non-center slides */
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.8; /* Slightly lower opacity for non-focused slides */
+            transition: opacity 0.3s ease;
+            margin: 0 15px;
         }
 
         /* Style for center slide */
         .slick-center {
-            transform: scale(1); /* Full size for center slide */
             opacity: 1; /* Fully visible center slide */
         }
 
-        /* Make side slides more visible */
-        .slick-slide:not(.slick-center) {
-            opacity: 0.8; /* Higher opacity for side slides */
+        /* Custom navigation button styling */
+        .slider-button {
+            position: absolute;
+            top: 10px; /* Position 10px from the top */
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            color: #fff; /* White text color */
+            border: none; /* Remove default border */
+            font-size: 24px; /* Increase font size */
+            padding: 10px; /* Add padding */
+            cursor: pointer; /* Pointer cursor */
+            z-index: 1000; /* Ensure buttons are above other elements */
+            transition: background 0.3s ease;
+        }
+
+        /* Left button position */
+        .slider-button.prev {
+            right: 50px; /* Position to the right, 50px from the right */
+        }
+
+        /* Right button position */
+        .slider-button.next {
+            right: 10px; /* Position to the right, 10px from the right */
+        }
+
+        /* Hover effect */
+        .slider-button:hover {
+            background: rgba(0, 0, 0, 0.7); /* Darker background on hover */
         }
     </style>
 </head>
 <body>
 
 <div class="slider">
+    <!-- Custom control buttons with Font Awesome icons -->
+    <button class="slider-button prev">next</button> <!-- Previous button -->
+    <button class="slider-button next">pre</button> <!-- Next button -->
+
+    <!-- Slick slider images -->
     <div><img src="assets/images/ci-home-1.jpg" alt="Slide 1"></div>
     <div><img src="assets/images/ci-home-2.jpg" alt="Slide 2"></div>
     <div><img src="assets/images/ci-home-1.jpg" alt="Slide 3"></div>
@@ -57,22 +89,25 @@
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
     $(document).ready(function(){
-        $('.slider').slick({
-            centerMode: true,               // Enable center mode
-            centerPadding: '250px',         // Increase center padding to show more of the left and right slides
-            slidesToShow: 1,                // Show 3 slides at a time
-            infinite: true,                 // Enable infinite loop
-            focusOnSelect: true,            // Focus on center slide when clicked
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,    // Show 1 slide at a time on smaller screens
-                        centerMode: true,
-                        centerPadding: '50px' // Adjust center padding for smaller screens
-                    }
-                }
-            ]
+        // Initialize the slick slider
+        var $slider = $('.slider').slick({
+            centerMode: true,                // Enable center mode
+            centerPadding: '260px',          // Increase center padding to show more of the left and right slides
+            slidesToShow: 1,                 // Show 1 slide at a time
+            infinite: true,                  // Enable infinite loop
+            focusOnSelect: true,             // Focus on center slide when clicked
+            autoplay: true,                  // Enable auto-slide
+            autoplaySpeed: 2000,             // Slide every 2000ms (2 seconds)
+            arrows: false                    // Disable default arrows
+        });
+
+        // Custom navigation button functionality
+        $('.prev').click(function() {
+            $slider.slick('slickPrev'); // Go to previous slide
+        });
+
+        $('.next').click(function() {
+            $slider.slick('slickNext'); // Go to next slide
         });
     });
 </script>

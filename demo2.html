@@ -3,46 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Box with Overflowing Image</title>
-    <!-- Bootstrap CSS (Optional) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Slick Slider - Text and Image Side by Side</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
-        .red-box {
-            background-color: red; /* Red background */
-            padding: 50px; /* 50px padding on all sides */
-            position: relative; /* Needed for the image to overflow properly */
-            overflow: visible; /* Allow overflow */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
         }
 
-        .red-box img {
-            position: relative; /* Keep image position relative to the container */
-            margin-left: -128px; /* Move the image 30px to the left */
-            max-width: calc(100% + 128px); /* Compensate for the negative margin */
-            height: auto; /* Maintain aspect ratio */
+        /* Style for the overall slider */
+        .slider {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-         /* Mobile responsive styles */
-         @media (max-width: 768px) { /* Breakpoint for mobile screens */
-            .red-box {
-                background-color: red;
-                padding: 16px;
-                position: relative;
-                overflow: visible;
-                margin-left: 113px;
-            }
+        /* Individual slide styling */
+        .slide {
+            display: flex; /* Use flexbox for horizontal layout */
+            align-items: center; /* Center items vertically */
+            padding: 20px;
+            flex-direction: row;
+        }
 
-            
+        /* Text container styling */
+        .text-container {
+            width: 50%; /* Takes half of the slide width */
+            padding-right: 20px; /* Space between text and image */
+        }
+
+        .text-container h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .text-container p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Image styling */
+        .image-container {
+            width: 50%; /* Takes half of the slide width */
+        }
+
+        .image-container img {
+            width: 100%; /* Image takes full width of its container */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Custom arrows */
+        .slick-prev, .slick-next {
+            font-size: 30px;
+            line-height: 1;
+            opacity: 0.75;
+            color: #333;
+            border: none;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .slick-prev:hover, .slick-next:hover {
+            opacity: 1;
+        }
+
+        .slick-prev:before, .slick-next:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+
+        .slick-prev:before {
+            content: "\f053"; /* Font Awesome left arrow */
+        }
+
+        .slick-next:before {
+            content: "\f054"; /* Font Awesome right arrow */
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="red-box">
-        <!-- Replace with your image URL -->
-        <img src="assets/images/ci-building-1.jpg" alt="Placeholder Image">
+<div class="slider">
+    <!-- Slide 1 -->
+    <div class="slide">
+        <div class="text-container">
+            <h2>Slide 1 Title</h2>
+            <p>This is a description for the first slide. Add any content you like here. You can provide information or highlight features of your product or service.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/600x400" alt="Slide 1 Image">
+        </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <div class="text-container">
+            <h2>Slide 2 Title</h2>
+            <p>This is a description for the second slide. You can customize this text area to include whatever content you want, such as promotional text or announcements.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/600x400" alt="Slide 2 Image">
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <div class="text-container">
+            <h2>Slide 3 Title</h2>
+            <p>This is a description for the third slide. Use this space to give more details about your product or service, along with the corresponding image.</p>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/600x400" alt="Slide 3 Image">
+        </div>
     </div>
 </div>
+
+<!-- jQuery and Slick Slider JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            dots: true,                 // Show navigation dots
+            infinite: true,             // Enable infinite loop
+            speed: 500,                 // Animation speed in milliseconds
+            slidesToShow: 1,            // Show 1 slide at a time
+            slidesToScroll: 1,          // Scroll 1 slide at a time
+            autoplay: true,             // Enable autoplay
+            autoplaySpeed: 3000,        // Autoplay speed in milliseconds
+            arrows: true,               // Show next/previous arrows
+            prevArrow: '<button type="button" class="slick-prev"></button>',
+            nextArrow: '<button type="button" class="slick-next"></button>',
+        });
+    });
+</script>
 
 </body>
 </html>
