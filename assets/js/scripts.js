@@ -89,20 +89,6 @@ $(document).ready(function(){
 
 
 
- // This code use for hide and show the top header //
-
-$(window).on('scroll', function() {
-    if ($(this).scrollTop() > 50) {
-        $('#normalLogo').hide();
-        $('#fixedLogo').show();
-    } else {
-        $('#normalLogo').show();
-        $('#fixedLogo').hide();
-    }
-});
-
- // This code use for hide and show the top header //
-
 
 
 
