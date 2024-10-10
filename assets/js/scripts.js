@@ -109,31 +109,6 @@ $(window).on('scroll', function() {
 
 
 
- // Floor plan Custom Js for calculation //
-   
- 
- let totalSum = 0;
-
-    // Function to toggle the value of the clicked cell between adding and subtracting
-    function toggleValue(cell) {
-        let cellValue = parseFloat(cell.textContent.replace(/,/g, '')); // Remove commas and convert to number
-
-        // Check if the cell has been clicked previously (toggle on/off)
-        if (cell.classList.contains('clicked')) {
-            // If cell is already clicked, subtract its value from the total
-            totalSum -= cellValue;
-            cell.classList.remove('clicked'); // Remove the clicked class to indicate deselection
-        } else {
-            // If cell is not clicked, add its value to the total
-            totalSum += cellValue;
-            cell.classList.add('clicked'); // Add the clicked class to indicate selection
-        }
-
-        // Update the sum display
-        document.getElementById('sumCell').textContent = totalSum.toLocaleString();
-    }
-
- // Floor plan Custom Js for calculation //
 
 
  $(document).ready(function(){
