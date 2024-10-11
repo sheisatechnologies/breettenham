@@ -118,3 +118,28 @@ $(document).ready(function(){
         ]
     });
 });
+
+
+
+
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+
+    $(document).ready(function(){
+        $('.slick-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: '<button type="button" class="slick-prev">&larr;</button>',
+            nextArrow: '<button type="button" class="slick-next">&rarr;</button>'
+        });
+    });
+
+    /* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */

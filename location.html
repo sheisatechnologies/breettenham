@@ -28,6 +28,11 @@
     <meta property='twitter:description' content='120,000 SQ FT OF CRAFTED WORKSPACE. OUTSTANDING DESIGN MEETS NATURAL BEAUTY. PANORAMIC VIEWS ACROSS THE RIVER. ICONIC RIVERSIDE LOCATION. AVAILABLE Q1 2026' />
     <meta property='twitter:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
 
+
+      <!-- Slick CSS -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  
     <!-- Google tag (gtag.js) -->
 
 </head>
@@ -122,6 +127,46 @@
 
         </div>
     </div>
+
+
+    <div class="container mt-5">
+        <div class="slick-slider">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <div class="row slide-content">
+                    <div class="col-md-3 text-content order-2 order-lg-1 ptd3 ptm2">
+                        <h3>Local Area</h3>
+                        <div>
+                            <p>With illustrious neighbours Somerset House and the world famous Savoy Hotel to either side of the building, the vibrant Covent Garden to the north and the South Bank immediately opposite to the south, there really is everything that you could want on your doorstep, and plenty of hidden gems to&nbsp;uncover.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 image-content order-1 order-lg-2">
+                        <img src="assets/images/location-image-desktop-2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+            </div>
+                </div>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="row slide-content">
+                    <div class="col-md-3 text-content order-2 order-lg-1 ptd3 ptm2">
+                        <h3>Local Area</h3>
+                    <div>
+                        <p>With illustrious neighbours Somerset House and the world famous Savoy Hotel to either side of the building, the vibrant Covent Garden to the north and the South Bank immediately opposite to the south, there really is everything that you could want on your doorstep, and plenty of hidden gems to&nbsp;uncover.</p>
+                    </div>
+                    </div>
+                    <div class="col-md-8 image-content order-1 order-lg-2">
+                        <img src="assets/images/location-image-desktop-2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                        <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row ptd2 ptm2 pbd4 pbm4">
@@ -295,18 +340,24 @@
         </div>
     </div>
 
+
+
+
     <div class="container">
         <div class="row ptd4 ptm4 pbd4 pbm4">
             <div class="col-lg-12">
                 <h3>A colourful destination</h3>
-                <div class="slider-2">
-                    <div><img src="assets/images/ci-home-1.jpg" alt="Brettenham House" class="img-fluid" /></div>
-                    <div><img src="assets/images/ci-home-2.jpg" alt="Brettenham House" class="img-fluid" /></div>
-                    <div><img src="assets/images/ci-home-3.jpg" alt="Brettenham House" class="img-fluid" /></div>
+                <div class="slider-sp">
+                    <div><img src="assets/images/ci-home-1.jpg" alt="Slide 1"></div>
+                    <div><img src="assets/images/ci-home-2.jpg" alt="Slide 2"></div>
+                    <div><img src="assets/images/ci-home-1.jpg" alt="Slide 3"></div>
+                    <div><img src="assets/images/ci-home-2.jpg" alt="Slide 4"></div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <footer>
         <div class="container">
@@ -387,13 +438,75 @@
      <!-- GSAP CDN -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 
-     
+    
+                <!-- jQuery, Bootstrap JS, and Slick JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
+
+
+<script>
+
+$(document).ready(function(){
+    $('.slider-sp').slick({
+        centerMode: true,               // Enable center mode
+        centerPadding: '360px',          // Increase center padding to show more of the left and right slides
+        slidesToShow: 1,                // Show 3 slides at a time
+        infinite: true,                 // Enable infinite loop
+        focusOnSelect: true,            // Focus on center slide when clicked
+        autoplay: true,                  // Enable auto-slide
+        autoplaySpeed: 2000,  
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,    // Show 1 slide at a time on smaller screens
+                    centerMode: true,
+                    centerPadding: '50px' // Adjust center padding for smaller screens
+                }
+            }
+        ]
+    });
+});
+
+
+</script>
+<script>
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+
+$(document).ready(function(){
+        $('.slick-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: '<button type="button" class="slick-prev">&larr;</button>',
+            nextArrow: '<button type="button" class="slick-next">&rarr;</button>'
+        });
+    });
+
+    /* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+</script>
+
 
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+   
 
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
+
+
+
+
 
     <script>
 

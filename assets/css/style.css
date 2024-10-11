@@ -267,8 +267,54 @@
 
 
 
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
 
 
+
+
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* .text-content {
+    width: 50%;
+} */
+
+.image-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Custom arrow styling */
+.slick-prev, .slick-next {
+    position: absolute;
+    bottom: 10px; /* Place arrows at the bottom */
+    left: 20px;   /* Both arrows start from the bottom-left */
+    z-index: 10;
+    font-size: 24px;
+    color: black;
+    background: none;
+    border: none;
+    top: 110% !important;
+}
+
+
+
+.slick-next {
+    left: 60px; /* Position the right arrow slightly to the right of the left arrow */
+}
+
+/* Hide default arrows */
+.slick-prev:before, .slick-next:before {
+    content: none;
+}
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
 
 
 
