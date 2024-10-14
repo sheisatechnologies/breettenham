@@ -1,4 +1,3 @@
-
 /* BRETTENHAM HOUSE
 /* OTHER ALIAS LTD
 /* ---------------------------------------------- */
@@ -317,6 +316,58 @@
 /* --------------------------------- multi slider carausal with text ---------------- */
 
 
+   /* Resize the arrow buttons */
+   .custom-prev-arrow, .custom-next-arrow {
+    background: none;
+    border: none;
+    font-size: 18px; /* Adjust the size of the icons here */
+    color: #333; /* Adjust the color as needed */
+    cursor: pointer;
+}
+
+/* Add some spacing around the arrows */
+.custom-prev-arrow {
+   margin-top: -60px;
+   margin-left: -20px;
+}
+
+.custom-next-arrow {
+    margin-top: -60px;
+    margin-left: 10px;
+}
+
+.custom-prev-arrow:focus, .custom-next-arrow:focus,
+.custom-prev-arrow:active, .custom-next-arrow:active {
+    color: #333; /* Ensure the arrow color remains consistent on click */
+}
+
+/* Ensure arrows are always visible */
+.custom-prev-arrow, .custom-next-arrow {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Center the slide indicator between the arrows */
+.slide-indicator {
+    font-size: 13px; /* Adjust the size of the slide indicator text */
+    
+    color: #333; /* Adjust the color as needed */
+    margin-top: -11px;
+    margin-left: 35px !important;
+}
 
 
 
+
+.build-prev{
+    position: absolute;
+    top: 100px;
+    left: -70px;
+}
+
+.build-next{
+    position: absolute;
+    top: 100px;
+    left: -40px;
+}

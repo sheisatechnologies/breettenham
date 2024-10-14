@@ -42,52 +42,73 @@
 
 
 
-.slide-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+
+@media (max-width: 767px) {
+    /* Make the navbar items stack and adjust spacing */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        width: 150px; /* Adjust logo size for mobile */
+    }
+
+    .navbar-toggler {
+        margin: 10px;
+    }
+
+    /* Fix spacing for mobile menu */
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    /* Reduce image container size */
+    .image-wrapper-ma, .mask-container {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Reduce padding for mobile */
+    .image-wrapper-ma {
+        padding: 10px;
+    }
+
+    /* Ensure the image is responsive */
+    .image-wrapper-ma img, .mask-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Adjust slider controls for mobile */
+    .slick-prev, .slick-next {
+        bottom: 0;
+        left: 0;
+        top: auto;
+    }
+
+    /* Slider images */
+    .slick-slide img {
+        width: 100%;
+        height: auto;
+    }
 }
 
-/* .text-content {
-    width: 50%;
-} */
-
-.image-content img {
-    width: 100%;
-    height: auto;
+/* GSAP adjustments for mobile */
+@media (max-width: 768px) {
+    /* Disable or adjust animations for mobile */
+    .gsap-animate {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
-
-/* Custom arrow styling */
-.slick-prev, .slick-next {
-    position: absolute;
-    bottom: 10px; /* Place arrows at the bottom */
-    left: 20px;   /* Both arrows start from the bottom-left */
-    z-index: 10;
-    font-size: 24px;
-    color: black;
-    background: none;
-    border: none;
-    top: 110% !important;
-}
-
-
-
-.slick-next {
-    left: 60px; /* Position the right arrow slightly to the right of the left arrow */
-}
-
-/* Hide default arrows */
-.slick-prev:before, .slick-next:before {
-    content: none;
-}
-
-/* --------------------------------- multi slider carausal with text ---------------- */
-/* --------------------------------- multi slider carausal with text ---------------- */
-
 
 </style>
-   
+  
+
+
 
 
 <style>
@@ -132,6 +153,69 @@
          /* all red container revel animation */
     
 
+
+@media (max-width: 767px) {
+    /* Make the navbar items stack and adjust spacing */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        width: 150px; /* Adjust logo size for mobile */
+    }
+
+    .navbar-toggler {
+        margin: 10px;
+    }
+
+    /* Fix spacing for mobile menu */
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    /* Reduce image container size */
+    .image-wrapper-ma, .mask-container {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Reduce padding for mobile */
+    .image-wrapper-ma {
+        padding: 10px;
+    }
+
+    /* Ensure the image is responsive */
+    .image-wrapper-ma img, .mask-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Adjust slider controls for mobile */
+    .slick-prev, .slick-next {
+        bottom: 0;
+        left: 0;
+        top: auto;
+    }
+
+    /* Slider images */
+    .slick-slide img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* GSAP adjustments for mobile */
+@media (max-width: 768px) {
+    /* Disable or adjust animations for mobile */
+    .gsap-animate {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -174,12 +258,13 @@
     <div class="container">
         <div class="row ptd2 pbd6 pbm6">
             <div class="col-lg-10 offset-lg-1">
-                <div class="mask-container d-none d-lg-block">
+                <div class="mask-container">
                     <!-- Wrapper that contains the image with padding -->
-                    <div class="wrapper-buil">
+                    <div class="wrapper-buil bg-location p-0 p-md-5">
                         <!-- Red reveal div that is larger than the image container -->
-                        <div class="image-reveal-buil"></div>
-                        <img src="assets/images/ci-home-1.jpg" alt="Hero Image">
+                        <div class="image-reveal-buil bg-location"></div>
+                        <img src="assets/images/ci-building-1.jpg" alt="Hero Image" class="img-fluid d-none d-lg-block">
+                        <img src="assets/images/building-image-mobile-1.jpg" alt="The Building - Brettenham House" class="img-fluid d-lg-none">
                     </div>
                 </div>
             </div>
@@ -189,6 +274,8 @@
         </div>
     </div>
 
+
+    
     <div class="container">
         <div class="row ptd1 ptm2 pbd1 pbm4">
             <div class="col-lg-7 offset-lg-1">
@@ -246,6 +333,10 @@
 
 
 
+
+
+
+
     <div class="container mt-5">
         <div class="slick-slider">
             <!-- Slide 1 -->
@@ -258,9 +349,9 @@
                         </div>
                     </div>
                     <div class="col-md-8 image-content order-1 order-lg-2">
-                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
-                    </div>
+                        <img src="assets/images/location-image-desktop-2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+            </div>
                 </div>
             </div>
     
@@ -274,16 +365,22 @@
                         </div>
                     </div>
                     <div class="col-md-8 image-content order-1 order-lg-2">
-                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                        <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+                        <img src="assets/images/location-image-desktop-2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                        <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
                     </div>
                 </div>
             </div>
     
             <!-- Add more slides as needed -->
         </div>
+        <div class="custom-navigation d-flex justify-content-start align-items-center mt-3">
+            <button type="button" class="slick-prev custom-prev-arrow"><i class="fas fa-chevron-left"></i></button>
+            <div class="slide-indicator indicator-location mx-3">
+                <span id="current-slide">1</span>/<span id="total-slides">2</span>
+            </div>
+            <button type="button" class="slick-next custom-next-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </div>
-
 
 
 
@@ -456,19 +553,29 @@
     
 
 <script>
+    
     $(document).ready(function(){
-        $('.slick-slider').slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            prevArrow: '<button type="button" class="slick-prev">&larr;</button>',
-            nextArrow: '<button type="button" class="slick-next">&rarr;</button>'
-        });
+    var $slickElement = $('.slick-slider');
+
+    $slickElement.on('init reInit afterChange', function(event, slick, currentSlide){
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $('#current-slide').text(i);
+        $('#total-slides').text(slick.slideCount);
     });
+
+    $slickElement.slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        prevArrow: '<button type="button" class="slick-prev custom-prev-arrow"><img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></button>',
+        nextArrow: '<button type="button" class="slick-next custom-next-arrow"><img src="assets/images/btn-arrow-right.svg" alt="Left Arrow"></button>'
+    });
+});
+
 </script>
     <script>
 

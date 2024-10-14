@@ -104,7 +104,9 @@ $(document).ready(function(){
         slidesToShow: 1,                // Show 3 slides at a time
         infinite: true,                 // Enable infinite loop
         focusOnSelect: true,            // Focus on center slide when clicked
-        autoplay: true,                  // Enable auto-slide
+        autoplay: true, 
+        prevArrow: $(".build-prev"),
+        nextArrow: $(".build-next"),                 // Enable auto-slide
         autoplaySpeed: 2000,  
         responsive: [
             {
@@ -127,19 +129,30 @@ $(document).ready(function(){
 /* --------------------------------- multi slider carausal with text ---------------- */
 
 
+    
     $(document).ready(function(){
-        $('.slick-slider').slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            prevArrow: '<button type="button" class="slick-prev">&larr;</button>',
-            nextArrow: '<button type="button" class="slick-next">&rarr;</button>'
-        });
+    var $slickElement = $('.slick-slider');
+
+    $slickElement.on('init reInit afterChange', function(event, slick, currentSlide){
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $('#current-slide').text(i);
+        $('#total-slides').text(slick.slideCount);
     });
+
+    $slickElement.slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        prevArrow: '<button type="button" class="slick-prev custom-prev-arrow"><img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></button>',
+        nextArrow: '<button type="button" class="slick-next custom-next-arrow"><img src="assets/images/btn-arrow-right.svg" alt="Left Arrow"></button>'
+    });
+});
+
+
 
     /* --------------------------------- multi slider carausal with text ---------------- */
 /* --------------------------------- multi slider carausal with text ---------------- */

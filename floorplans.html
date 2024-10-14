@@ -30,25 +30,31 @@
 
     <!-- Google tag (gtag.js) -->
 <style>
-     table {
+     #dataTable{
             width: 80%;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: #ECF5F5;
            
         }
-        th, td {
+        .level-column,
+        .level-head{
             border-bottom: 1px solid black; /* Only show bottom border */
             padding: 8px;
             text-align: center;
             cursor: pointer;
+        }
+
+        .total-column{
+            border-bottom: none;
         }
         th {
             
             font-weight: bold;
         }
         .clicked {
-            background-color: #c8e6c9; /* Light green background for selected cells */
+            background-color: #BDE2DF; /* Light green background for selected cells */
+            border: 3px solid black;
 
         }
         .sum-row {
@@ -60,6 +66,467 @@
             font-weight: bold;
             cursor: default;
         }
+
+        
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container, .row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-lg-10, .col-lg-12, .col-lg-3, .col-lg-9, .col-lg-1 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    h1.rotate {
+        transform: rotate(0deg);
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    p, td {
+        font-size: 14px;
+        text-align: center;
+    }
+    #dataTable {
+        width: 100%;
+        font-size: 12px;
+    }
+    /* Adjusting button sizes for mobile */
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    /* Hide non-essential large images on mobile */
+    .d-none.d-lg-block {
+        display: none !important;
+    }
+}
+
+</style>
+
+<style>
+
+/* BRETTENHAM HOUSE
+/* OTHER ALIAS LTD
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* VARIABLES
+/* ---------------------------------------------- */
+:root {
+    --blue: #0048C6;
+    --teal: #62BCB3;
+    --green: #168771;
+    --orange: #FF4602;
+    --mustard: #FF9222;
+    --black: #000000;
+    --white: #FFFFFF;
+    --off-black: #333333;
+    --grey: #B6B6B6FF;
+    --light-grey: #ECF5F5;
+    --ziggurat: #BDE2DF;
+    --breaker-bay: #6CA6A2;
+    --edgewater: #CAE2E0;
+}
+
+/* ---------------------------------------------- */
+/* @FONT-FACE
+/* ---------------------------------------------- */
+
+@font-face {
+    font-family: 'Altform-Regular';
+    src: url('../fonts/Altform-Regular.woff2') format('woff2'),
+    url('../fonts/Altform-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altform-Bold';
+    src: url('../fonts/Altform-Bold.woff2') format('woff2'),
+    url('../fonts/Altform-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.bg-location{
+    background-color: var(--mustard) !important;
+}
+
+.bg-download{
+    background-color: var(--green) !important;
+}
+
+.bg-floorplan{
+    background-color: var(--teal) !important;
+}
+
+.bg-contact{
+    background-color: var(--blue) !important;
+}
+
+
+
+
+
+
+/* universal header code */
+
+#fixedLogo{
+    display: none;
+}
+
+/* universal header code */
+
+
+
+
+
+
+
+
+
+/* index  custom slide slick */
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 50px;
+    margin: 4px;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 59px;
+    height: 5px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+   background-color: var(--white);
+}
+
+.slick-dots li button {
+    display: none;
+}
+
+.slick-dots li:hover{
+    background-color: var(--orange);
+}
+
+/* index  custom slide slick */
+
+
+
+
+
+
+
+
+
+
+
+/* image revel css for all hero section*/
+       /* Mask container styling */
+       .mask-container {
+        position: relative;
+        width: 100%; /* Set a larger width for the mask container */
+        height: 600px; /* Set a larger height for the mask container */
+        overflow: hidden; /* Ensure that the wrapper content stays hidden initially */
+        background-color: transparent; /* Transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Wrapper element styling */
+    .wrapper-buil {
+        width: 100%; /* Width of the image container */
+        height: 100%; /* Height of the image container */
+        background-color: red;
+        position: absolute;
+        padding: 40px; /* Add padding around the image */
+        box-sizing: border-box; /* Include padding in width and height calculations */
+        transform-origin: left; /* Set the origin to the left for the scaling effect */
+        transform: scaleX(0); /* Start with zero width (completely hidden) */
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    /* Image reveal div that covers the image */
+    .image-reveal-buil {
+        position: absolute;
+        top: -20px; /* Position the red container above the wrapper */
+        left: -20px; /* Position the red container to the left of the wrapper */
+        width: 100%; /* Width of the red container should be larger than the wrapper */
+        height: 100%; /* Height of the red container should be larger than the wrapper */
+        background: red;
+        transform-origin: left;
+        transform: scaleX(1); /* Start fully covering the image */
+        z-index: 2;
+    }
+
+    /* Image styling */
+    .wrapper-buil img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+/* image revel css for all hero section*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /* all red container revel animation */
+     .image-wrapper-ma {
+        position: relative;
+        overflow: hidden;
+        width: 800px; /* Increased width */
+        height: 500px; /* Increased height */
+        flex-shrink: 0;
+        padding: 20px;
+        background-color: red;
+    }
+
+    /* Red container to cover the image */
+    .image-reveal-ma {
+        position: absolute;
+        top: 0;
+        right: 0; /* Positioned on the right */
+        width: 100%;
+        height: 100%;
+        background: red; /* Red reveal container */
+        transform: translateX(0); /* Start fully covering the image */
+        z-index: 1; /* Ensure it is on top of the image */
+    }
+
+    /* Image styling */
+    .image-wrapper-ma img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Paragraph styling */
+    .text-content-ma {
+        max-width: 400px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+     /* all red container revel animation */
+
+
+
+
+
+
+
+
+ /* Style for the overall slider */
+ .slider-sp {
+    width: 100%; /* Control the overall width of the slider */
+    margin: 0 auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow to control visibility */
+}
+
+/* Slick list container */
+.slider-sp .slick-list {
+    overflow: visible; /* Allow slides to overflow */
+    padding: 0; /* Remove default padding */
+}
+
+/* Individual slide */
+.slider-sp .slick-slide img {
+    width: 100%; /* Ensure images take full slide width */
+    border-radius: 10px; /* Optional styling for rounder edges */
+}
+
+/* General slide styling */
+.slider-sp .slick-slide {
+    opacity: 0.8; /* Slightly lower opacity for non-focused slides */
+    transition: opacity 0.3s ease;
+    margin: 0 15px;
+}
+
+/* Style for center slide */
+.slider-sp .slick-center {
+    opacity: 1; /* Fully visible center slide */
+}
+
+
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+
+
+
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* .text-content {
+    width: 50%;
+} */
+
+.image-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Custom arrow styling */
+.slick-prev, .slick-next {
+    position: absolute;
+    bottom: 10px; /* Place arrows at the bottom */
+    left: 20px;   /* Both arrows start from the bottom-left */
+    z-index: 10;
+    font-size: 24px;
+    color: black;
+    background: none;
+    border: none;
+    top: 110% !important;
+}
+
+
+
+.slick-next {
+    left: 60px; /* Position the right arrow slightly to the right of the left arrow */
+}
+
+/* Hide default arrows */
+.slick-prev:before, .slick-next:before {
+    content: none;
+}
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+
+   /* Resize the arrow buttons */
+   .custom-prev-arrow, .custom-next-arrow {
+    background: none;
+    border: none;
+    font-size: 18px; /* Adjust the size of the icons here */
+    color: #333; /* Adjust the color as needed */
+    cursor: pointer;
+}
+
+/* Add some spacing around the arrows */
+.custom-prev-arrow {
+   margin-top: -60px;
+   margin-left: -20px;
+}
+
+.custom-next-arrow {
+    margin-top: -60px;
+    margin-left: 10px;
+}
+
+.custom-prev-arrow:focus, .custom-next-arrow:focus,
+.custom-prev-arrow:active, .custom-next-arrow:active {
+    color: #333; /* Ensure the arrow color remains consistent on click */
+}
+
+/* Ensure arrows are always visible */
+.custom-prev-arrow, .custom-next-arrow {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Center the slide indicator between the arrows */
+.slide-indicator {
+    font-size: 13px; /* Adjust the size of the slide indicator text */
+    
+    color: #333; /* Adjust the color as needed */
+    margin-top: -11px;
+    margin-left: 35px !important;
+}
+
+
+
+
+.build-prev{
+    position: absolute;
+    top: 100px;
+    left: -70px;
+}
+
+.build-next{
+    position: absolute;
+    top: 100px;
+    left: -40px;
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container, .row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-lg-10, .col-lg-12, .col-lg-3, .col-lg-9, .col-lg-1 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    h1.rotate {
+        transform: rotate(0deg);
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    p, td {
+        font-size: 14px;
+        text-align: center;
+    }
+    #dataTable {
+        width: 100%;
+        font-size: 12px;
+    }
+    /* Adjusting button sizes for mobile */
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    /* Hide non-essential large images on mobile */
+    .d-none.d-lg-block {
+        display: none !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -129,139 +596,139 @@
         <table id="dataTable">
             <thead>
                 <tr>
-                    <th>LEVEL</th>
-                    <th>OFFICE (SQ FT)</th>
-                    <th>DUCHY</th>
-                    <th>9 SAVOY STREET (SQ FT)</th>
-                    <th>RETAIL (SQ FT)</th>
-                    <th>TERRACE (SQ FT)</th>
+                    <th class="level-head">LEVEL</th>
+                    <th class="level-head">OFFICE (SQ FT)</th>
+                    <th class="level-head">DUCHY</th>
+                    <th class="level-head">9 SAVOY STREET (SQ FT)</th>
+                    <th class="level-head">RETAIL (SQ FT)</th>
+                    <th class="level-head">TERRACE (SQ FT)</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Add rows similar to the image with clickable cells for sum calculation -->
                 <tr>
                     <td class="level-column">9</td>
-                    <td class="data" onclick="toggleValue(this)">3,283</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">3,305</td>
+                    <td class="level-column data" onclick="toggleValue(this)">3,283</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">3,305</td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">7</td>
-                    <td class="data" onclick="toggleValue(this)">9,623</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">538</td>
+                    <td class="level-column data" onclick="toggleValue(this)">9,623</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">538</td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">7</td>
-                    <td class="data" onclick="toggleValue(this)">9,623</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">538</td>
+                    <td class="level-column data" onclick="toggleValue(this)">9,623</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">538</td>
                 </tr>
                 <tr>
                     <td class="level-column">7</td>
-                    <td class="data" onclick="toggleValue(this)">9,623</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">538</td>
+                    <td class="level-column data" onclick="toggleValue(this)">9,623</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">538</td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">8</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <tr>
                     <td class="level-column">7</td>
-                    <td class="data" onclick="toggleValue(this)">9,623</td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td class="data" onclick="toggleValue(this)">538</td>
+                    <td class="level-column data" onclick="toggleValue(this)">9,623</td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column data" onclick="toggleValue(this)">538</td>
                 </tr>
                 <tr>
                     <td class="level-column">7</td>
-                    <td class="data" onclick="toggleValue(this)">9,623</td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">9,623</td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
 
                 <tr>
                     <td class="level-column">7</td>
-                    <td class="data" onclick="toggleValue(this)">9,623</td>
-                    <td></td>
-                    <td class="data" onclick="toggleValue(this)">7,858</td>
-                    <td></td>
-                    <td></td>
+                    <td class="level-column data" onclick="toggleValue(this)">9,623</td>
+                    <td class="level-column"></td>
+                    <td class="level-column data" onclick="toggleValue(this)">7,858</td>
+                    <td class="level-column"></td>
+                    <td class="level-column"></td>
                 </tr>
                 <!-- Add more rows as per the image -->
             </tbody>
             <tfoot>
                 <tr class="sum-row">
-                    <td colspan="1" style="text-align: right; background-color: #c8e6c9;"> <strong>TOTAL :</strong></td>
-                    <td colspan="1" id="sumCell" style="background-color: #c8e6c9;"></td>
-                    <td colspan="1" id="sumCell">3,337</td>
-                    <td colspan="1" id="sumCell">13,563</td>
-                    <td colspan="1" id="sumCell">5,662</td>
-                    <td colspan="1" id="sumCell">5,942</td>
+                    <td class="level-column total-column" colspan="1" style="text-align: right"> <strong>TOTAL :</strong></td>
+                    <td class="level-column total-column" colspan="1" id="sumCell" style="background-color: #BDE2DF; border: 3px solid black;"></td>
+                    <td class="level-column total-column" colspan="1" id="sumCell">3,337</td>
+                    <td class="level-column total-column" colspan="1" id="sumCell">13,563</td>
+                    <td class="level-column total-column" colspan="1" id="sumCell">5,662</td>
+                    <td class="level-column total-column" colspan="1" id="sumCell">5,942</td>
                     
                 </tr>
             </tfoot>

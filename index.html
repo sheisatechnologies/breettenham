@@ -28,9 +28,77 @@
     <meta property='twitter:card' content='summary' />
     <meta property='twitter:description' content='120,000 SQ FT OF CRAFTED WORKSPACE. OUTSTANDING DESIGN MEETS NATURAL BEAUTY. PANORAMIC VIEWS ACROSS THE RIVER. ICONIC RIVERSIDE LOCATION. AVAILABLE Q1 2026' />
     <meta property='twitter:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google tag (gtag.js) -->
+<style>
 
+
+
+
+@media (max-width: 767px) {
+    /* Make the navbar items stack and adjust spacing */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        width: 150px; /* Adjust logo size for mobile */
+    }
+
+    .navbar-toggler {
+        margin: 10px;
+    }
+
+    /* Fix spacing for mobile menu */
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    /* Reduce image container size */
+    .image-wrapper-ma, .mask-container {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Reduce padding for mobile */
+    .image-wrapper-ma {
+        padding: 10px;
+    }
+
+    /* Ensure the image is responsive */
+    .image-wrapper-ma img, .mask-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Adjust slider controls for mobile */
+    .slick-prev, .slick-next {
+        bottom: 0;
+        left: 0;
+        top: auto;
+    }
+
+    /* Slider images */
+    .slick-slide img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* GSAP adjustments for mobile */
+@media (max-width: 768px) {
+    /* Disable or adjust animations for mobile */
+    .gsap-animate {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+</style>
 </head>
 <body>
 
@@ -158,7 +226,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container position-relative pmb-6 dmb-6">
         <div class="row ptd4 ptm4 pbd4 pbm4">
             <div class="col-lg-12">
                 <h3>Local Area</h3>
@@ -169,6 +237,8 @@
                     <div><img src="assets/images/ci-home-2.jpg" alt="Slide 4"></div>
                 </div>
             </div>
+            <i class='fa fa-chevron-left build-prev d-flex justify-content-end'></i>
+            <i class='fa fa-chevron-right build-next  d-flex justify-content-end'></i>
         </div>
     </div>
 

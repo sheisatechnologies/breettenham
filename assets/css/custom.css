@@ -826,6 +826,10 @@ footer a:hover {
         text-align: right;
     }
 
+    .dmb-6 {
+        margin-bottom: 6rem !important;
+    }
+
 }
 
 /* ---------------------------------------------- */
@@ -898,6 +902,10 @@ footer a:hover {
     .container {
         padding-left: 35px;
         padding-right: 35px;
+    }
+
+    .pmb-6 {
+        margin-bottom: 6rem !important;
     }
 
 }

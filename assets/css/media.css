@@ -1,4 +1,4 @@
-@media only screen and (max-width: 991px) {
+@media(max-width: 991px) {
    
     
 
@@ -25,8 +25,21 @@
         text-align: center;
     }
 
+    /* home page media  */
 
 
+    .build-prev {
+        position: absolute;
+        top: 280px !important;
+        left: -212px !important;
+    }
+
+
+    .build-next {
+    position: absolute;
+    top: 280px !important;
+    left: -153px !important;
+}
 
 
 }
