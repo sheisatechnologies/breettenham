@@ -32,7 +32,57 @@
 
     <!-- Google tag (gtag.js) -->
 <style>
+ 
+ 
 
+
+
+ /* Mask container styling */
+ .mask-container {
+            position: relative;
+            width: 700px; /* Set a larger width for the mask container */
+            height: 500px; /* Set a larger height for the mask container */
+            overflow: hidden; /* Ensure that the wrapper content stays hidden initially */
+            background-color: transparent; /* Transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto; /* Center the container */
+        }
+
+        /* Wrapper element styling */
+        .wrapper {
+            width: 600px; /* Width of the image container */
+            height: 400px; /* Height of the image container */
+            background-color: red;
+            position: absolute;
+            padding: 20px; /* Add padding around the image */
+            box-sizing: border-box; /* Include padding in width and height calculations */
+            transform-origin: left; /* Set the origin to the left for the scaling effect */
+            transform: scaleX(0); /* Start with zero width (completely hidden) */
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Image reveal div that covers the image */
+        .image-reveal {
+            position: absolute;
+            top: -20px; /* Position the red container above the wrapper */
+            left: -20px; /* Position the red container to the left of the wrapper */
+            width: 640px; /* Width of the red container should be larger than the wrapper */
+            height: 440px; /* Height of the red container should be larger than the wrapper */
+            background: red;
+            transform-origin: left;
+            transform: scaleX(1); /* Start fully covering the image */
+            z-index: 2;
+        }
+
+        /* Image styling */
+        .wrapper img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
 
 
 
@@ -161,11 +211,18 @@
     <div class="container">
         <div class="row ptm2 pbd4 pbm4">
             <div class="col-lg-8 offset-lg-1 order-lg-1 pbm4">
-                <div class="image-wrapper-ma image-wrapper-ma-h1">
-                    <div class="image-reveal-ma image-reveal-ma-h1"></div>
-                    <img src="assets/images/ci-building-1.jpg" alt="Image Reveal" class="img-fluid d-none d-lg-block">
-                    <img src="assets/images/home-image-mobile-2.jpg" alt="Photograph of Brettenham House" class="img-fluid d-lg-none">
-                </div>
+                 <!-- Mask Container that contains the Wrapper -->
+   
+                <!-- Updated container class name -->
+      <div class="scroll-wrapper">
+        <!-- Updated wrapper class names -->
+        <div class="image-container p-0 p-lg-5">
+            <!-- Updated reveal div class name -->
+            <div class="image-reveal-mask"></div>
+            <img src="assets/images/ci-home-2.jpg" alt="Hero Image" class="d-none d-lg-block">
+            <img src="assets/images/building-image-mobile-1.jpg" alt="Hero Image" class="d-lg-none p-0">
+        </div>
+    </div>
                 
             </div>
             <div class="col-lg-3 order-lg-0 ptd3 ptm2">
@@ -178,6 +235,12 @@
         </div>
     </div>
 
+  
+     
+
+
+
+    
 
     <div class="container">
         <div class="row ptd4 ptm4 pbd4 pbm4">
@@ -226,6 +289,11 @@
         </div>
     </div>
 
+
+
+
+    
+
     <div class="container position-relative pmb-6 dmb-6">
         <div class="row ptd4 ptm4 pbd4 pbm4">
             <div class="col-lg-12">
@@ -241,6 +309,19 @@
             <i class='fa fa-chevron-right build-next  d-flex justify-content-end'></i>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+   
+
+
 
     <footer>
         <div class="container">
@@ -331,8 +412,72 @@
            <!-- GSAP and ScrollTrigger CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-<script type="text/javascript" src="assets/js/scripts.js"></script>
 
+
+<!-- GSAP and ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+
+<script>
+       // Register ScrollTrigger
+       gsap.registerPlugin(ScrollTrigger);
+
+// GSAP Timeline Animation for the wrapper reveal with updated class names
+const t2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".scroll-wrapper",  // The new element that triggers the animation
+        start: "top 90%",           // Start when the top of the container hits 80% of the viewport height
+        end: "bottom 50%",          // Optional: Animation can end when the bottom hits 20% of viewport
+        scrub: true,                // Smooth scroll-based animation
+        markers: false               // Optional: Enable markers for debugging
+    }
+});
+
+// 1. Animate the updated container from a specific point using scaling
+t2.to(".image-container", {
+    duration: 1,
+    scaleX: 1,             // Expand the container horizontally from 0 to full width
+    ease: "power3.out",    // Ease animation to make it smooth
+})
+
+// 2. Reveal the image by animating the updated reveal div
+.to(".image-reveal-mask", {
+    duration: 1,
+    scaleX: 0,             // Scale the red reveal div horizontally to 0 to reveal the image
+    transformOrigin: "left",
+    ease: "power2.out"
+});
+</script>
+
+
+<script>
+     $(document).ready(function(){
+    $('.slider-sp').slick({
+        centerMode: true,               // Enable center mode
+        centerPadding: '360px',          // Increase center padding to show more of the left and right slides
+        slidesToShow: 1,                // Show 3 slides at a time
+        infinite: true,                 // Enable infinite loop
+        focusOnSelect: true,            // Focus on center slide when clicked
+        autoplay: true, 
+        prevArrow: $(".build-prev"),
+        nextArrow: $(".build-next"),                 // Enable auto-slide
+        autoplaySpeed: 2000,  
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,    // Show 1 slide at a time on smaller screens
+                    centerMode: true,
+                    centerPadding: '50px' // Adjust center padding for smaller screens
+                }
+            }
+        ]
+    });
+});
+
+</script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
 <script>
 
     // This code use for hide and show the top header //
@@ -351,6 +496,8 @@ if ($(this).scrollTop() > 50) {
 
 
 </script>
+
+
 
     <script>
         $(document).ready(function(){

@@ -35,10 +35,87 @@
     <!-- Google tag (gtag.js) -->
 <style>
 
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /* --------------------------------- multi slider carausal with text ---------------- */
 /* --------------------------------- multi slider carausal with text ---------------- */
 
+.reveal {
+            overflow: hidden;
+            display: inline-block;
+            opacity: 0;
+            transform: rotate(90deg); /* Start with the text rotated 90 degrees (vertical) */
+            transform-origin: left bottom; /* Set the origin for rotation to keep it aligned */
+            animation: reveal 2s forwards;
+            width: 500px;
+            margin-top: -64px;
+            
+        }
+
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px) rotate(90deg); /* Vertical text starts slightly offset */
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(20px) rotate(90deg); /* Vertical text moves into place */
+            }
+        }
+
+        
+/* main body animation */
+
+
+ /* Updated class names for container styling */
+ .scroll-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    /* margin: 100vh auto; Center the container and make sure it’s halfway down the page */
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Updated class names for the inner wrapper styling */
+.image-container {
+    width: 100%;
+    height: 600px;
+    background-color: red;
+    position: absolute;
+    padding: 50px;
+    box-sizing: border-box;
+    transform-origin: left;
+    transform: scaleX(0);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Updated class names for the reveal div */
+.image-reveal-mask {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 640px;
+    background: red;
+    transform-origin: left;
+    transform: scaleX(1);
+    z-index: 2;
+}
+
+/* Image styling */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 
 
 
@@ -120,7 +197,7 @@
             width: 100%; /* Increased width */
             height: 700px; /* Increased height */
             flex-shrink: 0;
-            padding: 20px;
+            padding: 50px;
             background-color: red;
         }
     
@@ -269,7 +346,9 @@
                 </div>
             </div>
             <div class="col-lg-1">
+                <!-- <h1 class="reveal">The Building</h1> -->
                 <h1 class="rotate trm">The Building</h1>
+               
             </div>
         </div>
     </div>
@@ -402,20 +481,38 @@
         </div>
     </div>
 
+   
+
+
+
     <div class="container">
-        <div class="row ptd2 ptm2 pbd4 pbm4">
+        <div class="row ptm2 pbd4 pbm4">
             <div class="col-lg-8 order-lg-0 pbm4">
-                <img src="assets/images/building-image-desktop-4.jpg" alt="History - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                <img src="assets/images/building-image-mobile-4.jpg" alt="History - Brettenham House" class="img-fluid d-lg-none">
+                 <!-- Mask Container that contains the Wrapper -->
+   
+                <!-- Updated container class name -->
+      <div class="scroll-wrapper">
+        <!-- Updated wrapper class names -->
+        <div class="image-container p-0 p-lg-5">
+            <!-- Updated reveal div class name -->
+            <div class="image-reveal-mask"></div>
+            <img src="assets/images/ci-home-2.jpg" alt="Hero Image" class="d-none d-lg-block">
+            <img src="assets/images/building-image-mobile-1.jpg" alt="Hero Image" class="d-lg-none p-0">
+        </div>
+    </div>
+                
             </div>
             <div class="col-lg-3 offset-lg-1 order-lg-1 ptd3 ptm2">
                 <h3>History</h3>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien mauris. Maecenas vitae mattis&nbsp;tellus.</p>
                 </div>
+               
             </div>
         </div>
     </div>
+
+
 
     <div class="container">
         <div class="row ptd2 ptm3 pbd6 pbm6">
@@ -542,7 +639,7 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
    
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+   
    
         <!-- jQuery, Bootstrap JS, and Slick JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -550,8 +647,42 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
 
-    
+<!-- GSAP and ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
+<script>
+       // Register ScrollTrigger
+       gsap.registerPlugin(ScrollTrigger);
+
+// GSAP Timeline Animation for the wrapper reveal with updated class names
+const t2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".scroll-wrapper",  // The new element that triggers the animation
+        start: "top 90%",           // Start when the top of the container hits 80% of the viewport height
+        end: "bottom 50%",          // Optional: Animation can end when the bottom hits 20% of viewport
+        scrub: true,                // Smooth scroll-based animation
+        // markers: true               // Optional: Enable markers for debugging
+    }
+});
+
+// 1. Animate the updated container from a specific point using scaling
+t2.to(".image-container", {
+    duration: 1,
+    scaleX: 1,             // Expand the container horizontally from 0 to full width
+    ease: "power3.out",    // Ease animation to make it smooth
+})
+
+// 2. Reveal the image by animating the updated reveal div
+.to(".image-reveal-mask", {
+    duration: 1,
+    scaleX: 0,             // Scale the red reveal div horizontally to 0 to reveal the image
+    transformOrigin: "left",
+    ease: "power2.out"
+});
+</script>
+    
+<script type="text/javascript" src="assets/js/scripts.js"></script>
 <script>
     
     $(document).ready(function(){

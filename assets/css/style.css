@@ -371,3 +371,91 @@
     top: 100px;
     left: -40px;
 }
+
+
+
+
+
+/* main body animation */
+
+
+ /* Updated class names for container styling */
+ .scroll-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    /* margin: 100vh auto; Center the container and make sure it’s halfway down the page */
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Updated class names for the inner wrapper styling */
+.image-container {
+    width: 100%;
+    height: 600px;
+    background-color: red;
+    position: absolute;
+    padding: 50px;
+    box-sizing: border-box;
+    transform-origin: left;
+    transform: scaleX(0);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Updated class names for the reveal div */
+.image-reveal-mask {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 640px;
+    background: red;
+    transform-origin: left;
+    transform: scaleX(1);
+    z-index: 2;
+}
+
+/* Image styling */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* 2nd home animation */
+
+
+
+.reveal {
+    overflow: hidden;
+    display: inline-block;
+    opacity: 0;
+    transform: rotate(90deg); /* Start with the text rotated 90 degrees (vertical) */
+    transform-origin: left bottom; /* Set the origin for rotation to keep it aligned */
+    animation: reveal 2s forwards;
+    width: 500px;
+    margin-top: -64px;
+    
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) rotate(90deg); /* Vertical text starts slightly offset */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(20px) rotate(90deg); /* Vertical text moves into place */
+    }
+}
