@@ -120,6 +120,26 @@
     margin-top: -11px;
     margin-left: 35px !important;
 }
+
+.build-prev{
+    position: absolute;
+    top: 100px;
+     left: 1040px;
+  
+
+}
+
+.build-next{
+    position: absolute;
+    top: 100px;
+    left: 1070px;
+}
+
+
+.nav-tabs{
+    margin-top: 60px;
+}
+
 </style>
 </head>
 <body>
@@ -176,10 +196,24 @@
            
             </div>
             <div class="col-lg-1">
-                <h1 class="reveal">The Location</h1>
+                <!-- <h1 class="reveal">The Location</h1> -->
+
+                <div class="reveal-wrapper">
+                    <div class="text-wrapper">
+                      <span class="text-revel">The Location</span>
+                    </div>
+                  </div>
+
+
+              
+
+
             </div>
         </div>
     </div>
+
+
+   
 
     <div class="container">
         <div class="row ptd1 ptm2 pbd1 pbm4">
@@ -252,7 +286,7 @@
             <!-- Add more slides as needed -->
         </div>
         <div class="custom-navigation d-flex justify-content-start align-items-center mt-3">
-            <button type="button" class="slick-prev custom-prev-arrow"><i class="fas fa-chevron-left"></i></button>
+            <button type="button" class="slick-prev custom-prev-arrow"><i class="fas fa-chevron-left left-arr"></i></button>
             <div class="slide-indicator indicator-location mx-3">
                 <span id="current-slide">1</span>/<span id="total-slides">2</span>
             </div>
@@ -335,6 +369,43 @@
             <div class="col-lg-3 ptd3 ptm2">
                 <h3>Connectivity</h3>
             </div>
+            <div class="col-lg-12 pbm4">
+                <div class="slider-connectivity text-center bg-mustard ptd4 pbd2 ptm6 pbm1">
+                    <div><h2>COVENT<br>GARDEN</h2><p>6 MINS</p></div>
+                    <div><h2>CHARING<br>CROSS</h2><p>8 MINS</p></div>
+                    <div><h2>LEICESTER<br>SQUARE</h2><p>13 MINS</p></div>
+                    <div><h2>WATERLOO</h2><p>R15 MINS</p></div>
+                    <div><h2>COVENT<br>GARDEN</h2><p>6 MINS</p></div>
+                    <div><h2>CHARING<br>CROSS</h2><p>8 MINS</p></div>
+                    <div><h2>LEICESTER<br>SQUARE</h2><p>13 MINS</p></div>
+                    <div><h2>WATERLOO</h2><p>R15 MINS</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row ptd2 ptm2 pbd4 pbm4">
+            <div class="row">
+                <div class="col-lg-3 ptd3 ptm2">
+                    <h3>Connectivity</h3>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="nav nav-tabs justify-content-center" id="floorplanTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="level-B2-tab" data-toggle="tab" href="#level-B2" role="tab" aria-controls="level-B2" aria-selected="false">Walk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="level-B1-tab" data-toggle="tab" href="#level-B1" role="tab" aria-controls="level-B1" aria-selected="false">Cycle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="level-LG-tab" data-toggle="tab" href="#level-LG" role="tab" aria-controls="level-LG" aria-selected="false">Tube</a>
+                        </li>
+                    </ul>
+                </div>
+                
+               </div>
             <div class="col-lg-12 pbm4">
                 <div class="slider-connectivity text-center bg-mustard ptd4 pbd2 ptm6 pbm1">
                     <div><h2>COVENT<br>GARDEN</h2><p>6 MINS</p></div>
@@ -518,8 +589,8 @@
                     <div><img src="assets/images/ci-home-2.jpg" alt="Slide 4"></div>
                 </div>
             </div>
-            <i class='fa fa-chevron-left build-prev d-flex justify-content-end'> <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></i>
-            <i class='fa fa-chevron-right build-next  d-flex justify-content-end'><img src="assets/images/btn-arrow-right.svg" alt="Left Arrow"></i>
+            <i class='fa fa-chevron-left build-prev'> <img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></i>
+            <i class='fa fa-chevron-right build-next'><img src="assets/images/btn-arrow-right.svg" alt="right Arrow"></i>
         </div>
     </div>
 
@@ -638,8 +709,8 @@
         arrows: true,
         autoplay: false,
         autoplaySpeed: 3000,
-        prevArrow: '<button type="button" class="slick-prev custom-prev-arrow"><img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></button>',
-        nextArrow: '<button type="button" class="slick-next custom-next-arrow"><img src="assets/images/btn-arrow-right.svg" alt="Left Arrow"></button>'
+        prevArrow: $(".build-prev"),
+        nextArrow: $(".build-next"),     
     });
 });
 

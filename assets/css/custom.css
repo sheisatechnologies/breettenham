@@ -648,6 +648,7 @@ footer p {
     font-size: 15px;
     line-height: 23px;
     color: var(--white);
+    text-align: left;
 }
 
 footer hr {

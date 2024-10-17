@@ -4,14 +4,14 @@ const tl = gsap.timeline();
 
 // 1. Animate the wrapper from a specific point using scaling
 tl.to(".wrapper-buil", {
-    duration: 1.5,
+    duration: 0.7,
     scaleX: 1,             // Expand the wrapper horizontally from 0 to full width
     ease: "power3.out",    // Ease animation to make it smooth
 })
 
 // 2. Reveal the image by animating the .image-reveal div
 .to(".image-reveal-buil", {
-    duration: 1,
+    duration: 0.8,
     scaleX: 0,             // Scale the red reveal div horizontally to 0 to reveal the image
     transformOrigin: "left",
     ease: "power2.out"
@@ -19,6 +19,23 @@ tl.to(".wrapper-buil", {
 
 
 
+
+
+
+
+const revealWrapper = document.querySelector('.reveal-wrapper');
+const textWrapper = document.querySelector('.text-wrapper');
+
+// First animate the width of the reveal-wrapper to show the text
+revealWrapper.style.width = "auto";  // Adjust width of the wrapper based on content
+
+gsap.to(textWrapper, {
+  duration: 1.5,          // Animation duration
+  opacity: 1,             // Fade in
+  x: 0,                   // Move to the right (from -100px to 0)
+  ease: 'power2.out',     // Ease the animation
+  delay: 0.5              // Delay before starting
+});
 
 
 
@@ -141,9 +158,9 @@ $(document).ready(function(){
         slidesToShow: 1,                // Show 3 slides at a time
         infinite: true,                 // Enable infinite loop
         focusOnSelect: true,            // Focus on center slide when clicked
-        autoplay: true, 
+        autoplay: false, 
         prevArrow: $(".build-prev"),
-        nextArrow: $(".build-next"),                 // Enable auto-slide
+        nextArrow: $(".build-next"),               // Enable auto-slide
         autoplaySpeed: 2000,  
         responsive: [
             {

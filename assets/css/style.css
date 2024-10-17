@@ -21,6 +21,11 @@
     --edgewater: #CAE2E0;
 }
 
+body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Add vertical scrollbar */
+}
+
 /* ---------------------------------------------- */
 /* @FONT-FACE
 /* ---------------------------------------------- */
@@ -353,7 +358,7 @@
     font-size: 13px; /* Adjust the size of the slide indicator text */
     
     color: #333; /* Adjust the color as needed */
-    margin-top: -11px;
+    margin-top: -2px;
     margin-left: 35px !important;
 }
 
@@ -363,13 +368,15 @@
 .build-prev{
     position: absolute;
     top: 100px;
-    left: -70px;
+     left: 1040px;
+  
+
 }
 
 .build-next{
     position: absolute;
     top: 100px;
-    left: -40px;
+    left: 1070px;
 }
 
 
@@ -459,3 +466,70 @@
         transform: translateX(20px) rotate(90deg); /* Vertical text moves into place */
     }
 }
+
+
+
+.nav-tabs {
+    border-bottom: none; /* Remove the bottom line of the tab container */
+}
+
+.nav-tabs .nav-link {
+    border: none; /* Remove the borders of individual tabs */
+    background: none; /* Remove the background color */
+    color: #A5A5A5 ; /* Set tab text color */
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.nav-tabs .nav-link.active {
+    color: black; /* Set active tab text color */
+    font-weight: bold; /* Make the active tab text bold */
+    background: none; /* Ensure no background color on active tab */
+    border: none; /* Remove border from active tab */
+}
+
+.tab-pane h2, .tab-pane p {
+    text-align: left; /* Align the heading and paragraph to the left */
+}
+
+.tab-content img {
+    display: block; /* Make the image a block element */
+    margin: 0 120px; /* Center the image horizontally */
+    width: 100%;
+    height: auto;
+    max-width: 1150px; /* Adjust this based on your design */
+}
+
+
+
+
+
+
+
+
+/* text animation revel */
+
+
+.reveal-wrapper {
+    overflow: hidden;       /* Hide text overflow */
+    width: 0;               /* Initially hide the text */
+    display: inline-block;
+    white-space: nowrap;
+    transition: width 1s ease;  /* Reveal effect on width */
+  }
+  .text-wrapper {
+    writing-mode: vertical-rl;  /* Arrange text vertically */
+    text-orientation: upleft;  /* Keep the text upright */
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;               /* Start invisible */
+    transform: translateX(-100px);  /* Start off-screen to the left */
+  }
+
+  .text-revel{
+      font-size: 65px;
+  line-height: 70px;
+  color: var(--black);
+  font-family: 'Altform-Bold', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  }
