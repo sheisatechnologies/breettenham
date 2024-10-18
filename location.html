@@ -47,19 +47,33 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-.build-prev{
-    position: absolute;
-    top: 100px;
-    left: -70px;
+.slick-slider {
+    overflow: visible !important;
 }
 
-.build-next{
+
+.build-prev,
+.build-next {
     position: absolute;
-    top: 100px;
-    left: -40px;
+    top: 16%; /* Vertically center relative to the carousel */
+    transform: translateY(-50%); /* Ensure vertical centering */
+    right: -150px; /* Move 150px further to the right */
+    z-index: 2; /* Ensure arrows are on top of content */
 }
+
+.build-prev {
+    margin-right: 50px; /* Space between the previous and next buttons */
+}
+
+.build-next {
+    margin-right: 0; /* Next button stays closest to the right */
+}
+
+
+
+
+
+
 
 
 .indicator-location{
@@ -121,19 +135,6 @@
     margin-left: 35px !important;
 }
 
-.build-prev{
-    position: absolute;
-    top: 100px;
-     left: 1040px;
-  
-
-}
-
-.build-next{
-    position: absolute;
-    top: 100px;
-    left: 1070px;
-}
 
 
 .nav-tabs{

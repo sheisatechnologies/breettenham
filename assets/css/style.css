@@ -29,7 +29,11 @@ body {
 /* ---------------------------------------------- */
 /* @FONT-FACE
 /* ---------------------------------------------- */
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 @font-face {
     font-family: 'Altform-Regular';
     src: url('../fonts/Altform-Regular.woff2') format('woff2'),

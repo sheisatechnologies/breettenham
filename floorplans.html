@@ -30,42 +30,52 @@
 
     <!-- Google tag (gtag.js) -->
 <style>
-     #dataTable{
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px auto;
-            background-color: #ECF5F5;
-           
-        }
-        .level-column,
-        .level-head{
-            border-bottom: 1px solid black; /* Only show bottom border */
-            padding: 8px;
-            text-align: center;
-            cursor: pointer;
-        }
 
-        .total-column{
-            border-bottom: none;
-        }
-        th {
-            
-            font-weight: bold;
-        }
-        .clicked {
-            background-color: #BDE2DF; /* Light green background for selected cells */
-            border: 3px solid black;
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    #dataTable {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #ECF5F5;
+}
 
-        }
-        .sum-row {
-          
-            font-weight: bold;
-        }
-        .level-column {
-           
-            font-weight: bold;
-            cursor: default;
-        }
+.level-column,
+.level-head {
+    border-bottom: 1px solid black; /* Only show bottom border */
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.total-column {
+    border-bottom: none;
+}
+
+th {
+    font-weight: bold;
+}
+
+.clicked {
+    background-color: #BDE2DF; /* Light green background for selected cells */
+    outline: 3px solid black; /* Use outline instead of border */
+    outline-offset: -3px; /* Ensures outline looks like a border */
+    box-sizing: border-box; /* Ensure the cell size doesn't change */
+}
+
+.sum-row {
+    font-weight: bold;
+}
+
+.level-column {
+    font-weight: bold;
+    cursor: default;
+}
+
 
         
 
@@ -489,43 +499,117 @@
 
 
 /* Mobile responsiveness */
+/* General mobile adjustments */
 @media (max-width: 768px) {
-    .container, .row {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .col-lg-10, .col-lg-12, .col-lg-3, .col-lg-9, .col-lg-1 {
+    .container {
         width: 100% !important;
-        padding: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin: 0 !important;
     }
-    .img-fluid {
-        max-width: 100%;
-        height: auto;
+
+    .navbar {
+        padding: 0 15px; /* Add padding inside navbar */
     }
-    h1.rotate {
-        transform: rotate(0deg);
-        font-size: 24px;
+
+    .navbar-toggler {
+        margin-right: 0; /* Ensure the toggle button stays in view */
+    }
+
+    .nav-item {
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center align nav links */
+    }
+
+    .nav-link {
+        padding: 10px 0; /* Adjust padding for mobile links */
+    }
+
+    .navbar-collapse {
+        justify-content: center; /* Center align the collapsed menu */
+    }
+
+    /* Avoid overflow on small screens */
+    html, body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* If needed, you can force all content within a specific width */
+    .row {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+
+
+
+
+/* tab responsive code  */
+
+
+/* Make the tab navigation responsive */
+/* Make the tab navigation responsive */
+@media (max-width: 768px) {
+    #floorplanTabs {
+        display: flex;
+        flex-wrap: nowrap; /* Keep tabs horizontal */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        justify-content: center; /* Center the tab buttons */
+        white-space: nowrap; /* Prevent wrapping */
+    }
+
+    .nav-item {
+        flex-grow: 1; /* Ensure each tab item takes up equal space */
+        text-align: center; /* Center the tab text */
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 10px;
+        display: inline-block; /* Keep tabs inline */
+    }
+
+    /* Ensure the tab content images are centered */
+    .tab-content img {
+        display: block;
+        margin: 0 auto; /* Center the image */
+        width: 100%; /* Ensure images scale down to fit the screen */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Prevent the image from exceeding the width */
+    }
+
+    /* Adjust buttons */
+    .tab-content .btn {
+        width: 100%; /* Full width buttons for better UX on mobile */
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the indicator image */
+    .image-floor {
+        display: block;
+        margin: 0 auto; /* Center the image */
+        width: 100%; /* Ensure indicator images take full width */
+        max-width: 100%; /* Prevent the image from exceeding the width */
+    }
+
+    /* Adjust text within tabs */
+    .tab-content h2 {
+        font-size: 20px;
         text-align: center;
-        margin-top: 20px;
     }
-    p, td {
+
+    .tab-content p {
         font-size: 14px;
         text-align: center;
     }
-    #dataTable {
-        width: 100%;
-        font-size: 12px;
-    }
-    /* Adjusting button sizes for mobile */
-    .btn {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-    /* Hide non-essential large images on mobile */
-    .d-none.d-lg-block {
-        display: none !important;
-    }
 }
+
+
+
+
 
 .image-floor{
     margin-left: 50px;
@@ -607,7 +691,7 @@
                 <!-- <h1 class="reveal">The Plans</h1> -->
 
 
-                <div class="reveal-wrapper">
+                <div class="reveal-wrapper d-none d-lg-block">
                     <div class="text-wrapper">
                       <span class="text-revel">The Plans</span>
                     </div>
@@ -1447,34 +1531,50 @@
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
 
     <script>
-
-        // Floor plan Custom Js for calculation //
-      
         let totalSum = 0;
-   
-   // Function to toggle the value of the clicked cell between adding and subtracting
-   function toggleValue(cell) {
-       let cellValue = parseFloat(cell.textContent.replace(/,/g, '')); // Remove commas and convert to number
-   
-       // Check if the cell has been clicked previously (toggle on/off)
-       if (cell.classList.contains('clicked')) {
-           // If cell is already clicked, subtract its value from the total
-           totalSum -= cellValue;
-           cell.classList.remove('clicked'); // Remove the clicked class to indicate deselection
-       } else {
-           // If cell is not clicked, add its value to the total
-           totalSum += cellValue;
-           cell.classList.add('clicked'); // Add the clicked class to indicate selection
-       }
-   
-       // Update the sum display
-       document.getElementById('sumCell').textContent = totalSum.toLocaleString();
-   }
-   
-   // Floor plan Custom Js for calculation //
-   
-  
-   </script>
+        let currentColumn = null; // Variable to track the current column being summed
+    
+        // Function to toggle the value of the clicked cell between adding and subtracting
+        function toggleValue(cell) {
+            const columnIndex = cell.cellIndex; // Get the index of the clicked column
+    
+            // If this is the first click, or the clicked column is the same as the current column
+            if (currentColumn === null || currentColumn === columnIndex) {
+                currentColumn = columnIndex; // Set the current column
+                
+                let cellValue = parseFloat(cell.textContent.replace(/,/g, '')); // Remove commas and convert to number
+    
+                // Check if the cell has been clicked previously (toggle on/off)
+                if (cell.classList.contains('clicked')) {
+                    // If cell is already clicked, subtract its value from the total
+                    totalSum -= cellValue;
+                    cell.classList.remove('clicked'); // Remove the clicked class to indicate deselection
+                } else {
+                    // If cell is not clicked, add its value to the total
+                    totalSum += cellValue;
+                    cell.classList.add('clicked'); // Add the clicked class to indicate selection
+                }
+    
+                // Update the sum display
+                document.getElementById('sumCell').textContent = totalSum.toLocaleString();
+            } else {
+                // If a different column is clicked, reset the sum and clear any clicked cells
+                resetTable();
+                currentColumn = columnIndex; // Set the new current column
+                toggleValue(cell); // Re-trigger the function for the new column
+            }
+        }
+    
+        // Function to reset the table (clear clicked cells and reset total)
+        function resetTable() {
+            const clickedCells = document.querySelectorAll('.clicked');
+            clickedCells.forEach(cell => cell.classList.remove('clicked')); // Remove the clicked class from all cells
+            totalSum = 0; // Reset the sum
+            document.getElementById('sumCell').textContent = totalSum.toLocaleString(); // Reset the display
+        }
+    </script>
+    
+    
 <script type="text/javascript" src="assets/js/scripts.js"></script>
 
 <script>
