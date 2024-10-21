@@ -51,6 +51,15 @@ gsap.to(textWrapper, {
 
 
 
+
+
+
+
+
+
+
+
+
 // // all red container image revel
 
 //     // Register the ScrollTrigger plugin with GSAP

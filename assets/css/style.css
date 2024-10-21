@@ -69,6 +69,10 @@ body {
 }
 
 
+.bg-building{
+    background-color: var(--orange) !important;
+}
+
 
 
 
@@ -258,7 +262,7 @@ body {
 /* Individual slide */
 .slider-sp .slick-slide img {
     width: 100%; /* Ensure images take full slide width */
-    border-radius: 10px; /* Optional styling for rounder edges */
+   
 }
 
 /* General slide styling */
@@ -496,12 +500,16 @@ body {
     text-align: left; /* Align the heading and paragraph to the left */
 }
 
-.tab-content img {
+.image-floor{
     display: block; /* Make the image a block element */
     margin: 0 120px; /* Center the image horizontally */
     width: 100%;
     height: auto;
     max-width: 1150px; /* Adjust this based on your design */
+}
+
+.floorplans-img{
+    margin: 0 120px; /* Center the image horizontally */
 }
 
 
@@ -537,3 +545,11 @@ body {
   font-family: 'Altform-Bold', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   }
+
+  /* .text-revel-mob{
+    font-size: 40px;
+line-height: 70px;
+color: var(--black);
+font-family: 'Altform-Bold', Helvetica, Arial, sans-serif;
+text-transform: uppercase;
+} */

@@ -14,6 +14,7 @@
     <link href="assets/css/slick-theme.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom.css?v=1.0.0" rel="stylesheet">
     <link href="assets/css/style.css?v=1.0.0" rel="stylesheet">
+    <link href="assets/css/media.css?v=1.0.0" rel="stylesheet">
     <link href="assets/images/favicon.png" rel="shortcut icon">
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -133,6 +134,14 @@
     z-index: 2;
 }
 
+.buil-reveal{
+    background: #FF4602 !important ;
+}
+
+.buil-container{
+    background: #FF4602 !important ;
+}
+
 /* Image styling */
 .image-container img {
     width: 100%;
@@ -159,16 +168,16 @@
     }
 
     .navbar {
-        padding: 0 15px; /* Add padding inside navbar */
+        padding: 15px; /* Add padding inside navbar */
         background-color: #fff; /* Ensure background color for visibility */
     }
-
+/* 
     .navbar-toggler {
-        margin-right: 15px; /* Keep a consistent margin */
-        position: absolute; /* Positioning the toggle button */
-        right: 15px; /* Keep it within the container */
-        top: 10px; /* Adjust top positioning as needed */
-    }
+        margin-right: 15px;
+        position: absolute; 
+        right: 15px;
+        top: 10px;
+    } */
 
     .nav-item {
         width: 100%; /* Full width for each item */
@@ -224,7 +233,7 @@
             height: 700px; /* Increased height */
             flex-shrink: 0;
             padding: 50px;
-            background-color: red;
+            background-color: #0048C6;
         }
     
         /* Red container to cover the image */
@@ -402,10 +411,10 @@
             <div class="col-lg-10 offset-lg-1">
                 <div class="mask-container">
                     <!-- Wrapper that contains the image with padding -->
-                    <div class="wrapper-buil bg-location p-0 p-md-5">
+                    <div class="wrapper-buil bg-building p-0 p-md-5">
                         <!-- Red reveal div that is larger than the image container -->
-                        <div class="image-reveal-buil bg-location"></div>
-                        <img src="assets/images/ci-building-1.jpg" alt="Hero Image" class="img-fluid d-none d-lg-block">
+                        <div class="image-reveal-buil bg-building"></div>
+                        <img src="assets/images/buil_img.jpg" alt="Hero Image" class="img-fluid d-none d-lg-block">
                         <img src="assets/images/building-image-mobile-1.jpg" alt="The Building - Brettenham House" class="img-fluid d-lg-none">
                     </div>
                 </div>
@@ -416,9 +425,11 @@
 
                 <div class="reveal-wrapper">
                     <div class="text-wrapper">
-                        <h1 class=" text"><span>The Building</span></h1>
+                      <span class="text-revel">THe Building </span>
                     </div>
                   </div>
+
+                 
                
             </div>
         </div>
@@ -471,11 +482,11 @@
         <div class="row pbd6 pbm6">
             <div class="col-lg-12">
                 <h3>Panoramic Views</h3>
-                <div class="image-wrapper-ma-h2">
-                    <!-- <div class="image-reveal-ma-h2"></div> -->
+                <!-- <div class="image-wrapper-ma-h2">
+                    <div class="image-reveal-ma-h2"></div>
                     <img src="assets/images/ci-building-1.jpg" alt="Image Reveal">
-                </div>
-                <img src="assets/images/building-image-mobile-2.jpg" alt="Panoramic Views - Brettenham House" class="img-fluid d-lg-none">
+                </div> -->
+                <img src="assets/images/building-image-desktop-2.jpg" alt="Panoramic Views - Brettenham House" class="img-fluid">
             </div>
         </div>
     </div>
@@ -501,7 +512,7 @@
                         </div>
                     </div>
                     <div class="col-md-8 image-content order-1 order-lg-2 p-5">
-                        <img src="assets/images/location-image-desktop-2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                        <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
                 <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
             </div>
                 </div>
@@ -511,13 +522,46 @@
             <div class="slide">
                 <div class="row slide-content">
                     <div class="col-md-3 text-content order-2 order-lg-1 ptd3 ptm2">
-                        <h3>Terraces</h3>
+                        <h3>collaboration spaces</h3>
                         <div>
-                            <p>The 9th floor houses two impressive terraces with some of London’s best views, thanks to the building’s prime position on the elbow of the River Thames. The north terrace is intended for communal use, accessible to all occupiers in the building. Sensitively landscaped by Townshend, this space offers a stunning amenity for occupiers on a day to day basis or a wonderful location for a one off party or&nbsp;event.</p>
+                            <p>The building’s dual aspect and approach creates generous communal spaces adjacent to each entrance. These will be beautifully furnished and zoned to provide a variety of different collaboration, work and social spaces for the use of all occupiers.</p>
                         </div>
                     </div>
                     <div class="col-md-8 image-content order-1 order-lg-2 p-5">
-                        <img src="assets/images/location-image-desktop-2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                        <img src="assets/images/bui-slider-image2.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                        <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="slide">
+                <div class="row slide-content">
+                    <div class="col-md-3 text-content order-2 order-lg-1 ptd3 ptm2">
+                        <h3>active travel</h3>
+                        <div>
+                            <p>Accessed directly from Savoy Street, the characterful basement vaults of the building house 310 bike storage spaces, including spaces for a variety of cycle types, a wash down facility, a bike repair area and automatic water fountains. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 image-content order-1 order-lg-2 p-5">
+                        <img src="assets/images/buil-slider-img3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
+                        <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="slide">
+                <div class="row slide-content">
+                    <div class="col-md-3 text-content order-2 order-lg-1 ptd3 ptm2">
+                        <h3>showers and changing rooms</h3>
+                        <div>
+                            <p>High quality showers and changing rooms are located at lower ground level, providing 24 showers, evenly split across two changing rooms, ample lockers, drying rooms, shoe cleaning stations, hairdryers, straighteners, irons and complementary towels and toiletries.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 image-content order-1 order-lg-2 p-5">
+                        <img src="" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
                         <img src="assets/images/location-image-mobile-2.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
                     </div>
                 </div>
@@ -568,10 +612,10 @@
                 <!-- Updated container class name -->
       <div class="scroll-wrapper">
         <!-- Updated wrapper class names -->
-        <div class="image-container p-0 p-lg-5">
+        <div class="image-container buil-container p-0 p-lg-5">
             <!-- Updated reveal div class name -->
-            <div class="image-reveal-mask"></div>
-            <img src="assets/images/ci-home-2.jpg" alt="Hero Image" class="d-none d-lg-block">
+            <div class="image-reveal-mask buil-reveal"></div>
+            <img src="" alt="Hero Image" class="d-none d-lg-block">
             <img src="assets/images/building-image-mobile-1.jpg" alt="Hero Image" class="d-lg-none p-0">
         </div>
     </div>

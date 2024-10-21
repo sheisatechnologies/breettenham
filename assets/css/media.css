@@ -30,8 +30,8 @@
 
     .build-prev {
         position: absolute;
-        top: 280px !important;
-        left: -212px !important;
+        top: 280px;
+        left: -212px;
     }
 
 
@@ -40,6 +40,31 @@
     top: 280px !important;
     left: -153px !important;
 }
+
+
+
+.text-wrapper {
+    writing-mode: horizontal-tb;  /* Arrange text vertically */
+    text-orientation: sideways-right;  /* Keep the text upright */
+  }
+
+  .text-revel{
+    font-size: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
