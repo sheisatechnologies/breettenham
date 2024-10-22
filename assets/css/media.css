@@ -27,8 +27,7 @@
 
     /* home page media  */
 
-
-    .build-prev {
+.build-prev {
         position: absolute;
         top: 280px;
         left: -212px;
@@ -40,6 +39,21 @@
     top: 280px !important;
     left: -153px !important;
 }
+
+/* 
+.build-prev {
+    margin-left: 245px;
+    margin-top: -160px
+}
+
+
+.build-next {
+    margin-left: 269px;
+    margin-top: -160px
+} */
+
+
+
 
 
 
