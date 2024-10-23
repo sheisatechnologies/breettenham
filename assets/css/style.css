@@ -162,6 +162,7 @@ body {
         transform: scaleX(0); /* Start with zero width (completely hidden) */
         overflow: hidden;
         z-index: 1;
+        top: 0;
     }
 
     /* Image reveal div that covers the image */
