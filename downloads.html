@@ -30,7 +30,28 @@
     <meta property='twitter:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
 
     <!-- Google tag (gtag.js) -->
+<style>
+* {
+    box-sizing: border-box;
+}
+       /* General styles to prevent image stretching */
+       img {
+        max-width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
 
+    .wrapper-buil img {
+        width: 100%;
+        height: auto; /* Keep the original aspect ratio */
+        object-fit: cover; /* Ensures the image covers the container without stretching */
+    }
+
+    /* Optionally for background images */
+    .image-reveal-buil {
+        background-size: cover; /* Ensures background images don't stretch */
+        background-position: center;
+    }
+</style>
 </head>
 <body>
 
