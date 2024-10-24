@@ -86,15 +86,8 @@ body {
 /* universal header code */
 
 
-
-
-
-
-
-
-
 /* index  custom slide slick */
-.slick-dots {
+/* .slick-dots {
     position: absolute;
     bottom: -25px;
     display: block;
@@ -108,11 +101,12 @@ body {
 .slick-dots li {
     position: relative;
     display: inline-block;
-    width: 59px;
+    width: 5px;
     height: 5px;
     margin: 0 5px;
     padding: 0;
     cursor: pointer;
+    border-radius: 50%;
     color: white;
    background-color: var(--white);
 }
@@ -123,12 +117,39 @@ body {
 
 .slick-dots li:hover{
     background-color: var(--orange);
-}
+} */
 
 /* index  custom slide slick */
 
 
 
+
+/* hope page last slider  */
+
+.slider-sp .slick-dots {
+    position: absolute;
+    bottom: -25px;
+    right: 50px;
+    display: block;
+    width: 100%;
+    padding: 50px;
+    margin: 4px;
+    list-style: none;
+    text-align: center;
+}
+
+.slider-sp .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    color: black;
+   background-color: black;
+}
 
 
 
@@ -303,23 +324,23 @@ body {
 }
 
 /* Custom arrow styling */
-.slick-prev, .slick-next {
+/* .slick-prev, .slick-next {
     position: absolute;
-    bottom: 10px; /* Place arrows at the bottom */
-    left: 20px;   /* Both arrows start from the bottom-left */
+    bottom: 10px; 
+    left: 20px;   
     z-index: 10;
     font-size: 24px;
     color: black;
     background: none;
     border: none;
     top: 110% !important;
-}
+} */
 
 
 
-.slick-next {
-    left: 60px; /* Position the right arrow slightly to the right of the left arrow */
-}
+/* .slick-next {
+    left: 60px; 
+} */
 
 /* Hide default arrows */
 .slick-prev:before, .slick-next:before {
@@ -374,19 +395,6 @@ body {
 
 
 
-.build-prev{
-    position: absolute;
-    top: 100px;
-     left: 1040px;
-  
-
-}
-
-.build-next{
-    position: absolute;
-    top: 100px;
-    left: 1070px;
-}
 
 /* 
 .build-prev{

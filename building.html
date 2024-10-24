@@ -36,6 +36,32 @@
     <!-- Google tag (gtag.js) -->
 <style>
 
+
+.slick-dots {
+    position: absolute;
+    bottom: 10px; /* Adjust this value to control how far from the bottom */
+    right: 10px; /* Adjust this value to control how far from the right */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slick-dots li {
+    margin: 0 5px; /* Adjust spacing between dots */
+}
+
+.slick-dots li button {
+    width: 10px; /* Adjust dot size */
+    height: 10px; /* Adjust dot size */
+    border-radius: 50%;
+    background-color: white; /* Default dot color */
+    border: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: red; /* Active dot color */
+}
+
+
 *{
     padding: 0;
     margin: 0;
@@ -286,69 +312,32 @@
 }
 
 
-/* index  custom slide slick */
+
+
 .slick-dots {
     position: absolute;
-    bottom: -25px;
-    display: block;
-    width: 100%;
-    padding: 50px;
-    margin: 4px;
-    list-style: none;
-    text-align: center;
+    bottom: 10px; /* Adjust this value to control how far from the bottom */
+    right: 10px; /* Adjust this value to control how far from the right */
+    display: flex;
+    justify-content: flex-end;
 }
 
 .slick-dots li {
-    position: relative;
-    display: inline-block;
-    width: 59px;
-    height: 5px;
-    margin: 0 5px;
-    padding: 0;
-    cursor: pointer;
-    color: white;
-   background-color: var(--white);
+    margin: 0 5px; /* Adjust spacing between dots */
 }
 
 .slick-dots li button {
-    display: none;
+    width: 10px; /* Adjust dot size */
+    height: 10px; /* Adjust dot size */
+    border-radius: 50%;
+    background-color: white; /* Default dot color */
+    border: none;
 }
 
-.slick-dots li:hover{
-    background-color: var(--orange);
+.slick-dots li.slick-active button {
+    background-color: red; /* Active dot color */
 }
-
-/* index  custom slide slick *//* index  custom slide slick */
-.slick-dots {
-    position: absolute;
-    bottom: -25px;
-    display: block;
-    width: 100%;
-    padding: 50px;
-    margin: 4px;
-    list-style: none;
-    text-align: center;
-}
-
-.slick-dots li {
-    position: relative;
-    display: inline-block;
-    width: 59px;
-    height: 5px;
-    margin: 0 5px;
-    padding: 0;
-    cursor: pointer;
-    color: white;
-   background-color: var(--white);
-}
-
-.slick-dots li button {
-    display: none;
-}
-
-.slick-dots li:hover{
-    background-color: var(--orange);
-}
+ 
 
 /* index  custom slide slick */
 @media (max-width: 768px) {
@@ -461,6 +450,8 @@
         <div class="row ptd4 ptm4 pbd4 pbm4">
             <div class="col-lg-12">
                 <div class="slider-1">
+                    <div><img src="assets/images/ci-building-1.jpg" alt="Brettenham House" class="img-fluid" /></div>
+                    <div><img src="assets/images/ci-building-2.jpg" alt="Brettenham House" class="img-fluid" /></div>
                     <div><img src="assets/images/ci-building-1.jpg" alt="Brettenham House" class="img-fluid" /></div>
                     <div><img src="assets/images/ci-building-2.jpg" alt="Brettenham House" class="img-fluid" /></div>
                 </div>
@@ -878,7 +869,7 @@ $(window).on('scroll', function() {
 <script>
     $(document).ready(function() {
         $('.key-fact-slider').slick({
-            dots: false,
+            dots: true,
             infinite: true,
             speed: 300,
             autoplay: true,
@@ -925,7 +916,7 @@ $(window).on('scroll', function() {
 <script>
     $(document).ready(function() {
         $('.slider-sustainability').slick({
-            dots: false,
+            dots: true,
             infinite: true,
             speed: 300,
             autoplay: true,

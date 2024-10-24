@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brettenham House</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/slick-theme.css" rel="stylesheet" type="text/css" />
+   <style>
+    /* Custom Arrow Styling */
+.slider-sp .build-prev,
+.slider-sp .build-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.slider-sp .build-prev {
+    right: 60px; /* Position previous arrow on the right */
+    left: unset; /* Ensure it's not on the left */
+}
+
+.slider-sp .build-next {
+    right: 10px; /* Position next arrow on the right */
+    left: unset; /* Ensure it's not on the left */
+}
+
+.slider-sp .build-prev img, 
+.slider-sp .build-next img {
+    width: 100%;
+    height: auto;
+}
+
+/* Customizing Dots */
+.slider-sp .slick-dots {
+    position: absolute;
+    bottom: -40px;
+    right: 20px; /* Move dots to the right */
+    left: unset; /* Remove any left alignment */
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Spacing between dots */
+    justify-content: flex-end; /* Align dots to the right */
+}
+
+.slider-sp .slick-dots li {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-sp .slick-dots li button {
+    background-color: transparent; /* Remove default background */
+    border: none;
+    padding: 0;
+    width: 15px; /* Custom dot size */
+    height: 15px;
+    border-radius: 50%; /* Circular dots */
+    background: url('assets/images/dot-inactive.svg') no-repeat center center; /* Inactive dot image */
+    background-size: cover;
+}
+
+/* Active Dot Styling */
+.slider-sp .slick-dots li.slick-active button {
+    background: url('assets/images/dot-active.svg') no-repeat center center; /* Active dot image */
+    background-size: cover;
+    color: red;
+    background-color: red;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .slider-sp .build-prev,
+    .slider-sp .build-next {
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        right: 20px;
+        left: unset;
+    }
+
+    .slider-sp .build-next {
+        right: 5px;
+    }
+
+    .slider-sp .slick-dots {
+        bottom: -30px;
+        right: 10px; /* Align dots to the right for smaller screens */
+        left: unset;
+    }
+}
+
+   </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Custom Arrows -->
+    <i class='fa build-prev'><img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></i>
+    <i class='fa build-next'><img src="assets/images/btn-arrow-right.svg" alt="Right Arrow"></i>
+
+    <!-- Slider Section -->
+    <div class="slider-sp">
+      <!-- Slider Images with Captions -->
+      <div><img src="assets/images/ci-home-1.jpg" alt="Slide 1" class="img-fluid">
+          <div class="slider-caption">Slide 1 Caption</div>
+      </div>
+      <div><img src="assets/images/ci-home-2.jpg" alt="Slide 2" class="img-fluid">
+          <div class="slider-caption">Slide 2 Caption</div>
+      </div>
+      <div><img src="assets/images/ci-home-1.jpg" alt="Slide 3" class="img-fluid">
+          <div class="slider-caption">Slide 3 Caption</div>
+      </div>
+    </div>
+  </div>
+
+    <!-- jQuery and Slick JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider-sp').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+                prevArrow: $(".build-prev"),  // Custom previous arrow
+                nextArrow: $(".build-next")   // Custom next arrow
+            });
+        });
+    </script>
+</body>
+</html>

@@ -19,10 +19,6 @@ tl.to(".wrapper-buil", {
 
 
 
-
-
-
-
 const revealWrapper = document.querySelector('.reveal-wrapper');
 const textWrapper = document.querySelector('.text-wrapper');
 
@@ -135,19 +131,19 @@ tl.to(".wrapper", {
   
  // Home page slider 1 //
 
-$(document).ready(function(){
-    $('.slider-1').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        autoplay: true,
-        arrows: false,
-        autoplaySpeed: 5000,
-        cssEase:"cubic-bezier(0.2, 0.4, 0.4, 0.9)",
-        swipeToSlide: true,
-        accessibility: true
-    });
-});
+// $(document).ready(function(){
+//     $('.slider-1').slick({
+//         dots: true,
+//         infinite: true,
+//         speed: 300,
+//         autoplay: true,
+//         arrows: false,
+//         autoplaySpeed: 5000,
+//         cssEase:"cubic-bezier(0.2, 0.4, 0.4, 0.9)",
+//         swipeToSlide: true,
+//         accessibility: true
+//     });
+// });
  // Home page slider 1 //
 
 

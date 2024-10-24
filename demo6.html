@@ -3,73 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Admission Card</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Brettenham House</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/slick-theme.css" rel="stylesheet" type="text/css" />
     <style>
-        body {
-            background-color: #f0f0f0;
+        /* Basic Styling for the Slider and Arrows */
+        .slider-sp {
+            position: relative;
+            margin-bottom: 40px;
         }
-        .admission-card {
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            width: 300px; /* Fixed width for the card */
-            overflow: hidden;
-            background-color: #ffffff;
+
+        /* Custom Arrow Styling */
+     .build-prev,
+         .build-next {
+            position: absolute;
+            top: 10px;
+            z-index: 1000;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
         }
-        .header {
-            background-color: #007bff;
+
+         .build-prev {
+            right: 60px;  /* Position the left arrow to the right of the slider */
+        }
+
+   .build-next {
+            right: 10px;   /* Position the right arrow further right */
+        }
+
+        /* Custom arrow image styling */
+     .build-prev img, 
+        .build-next img {
+            width: 100%;   /* Make the arrow responsive */
+            height: auto;
+        }
+
+        /* Positioning Dots */
+         .slick-dots {
+            position: absolute;
+            bottom: -40px;  /* Place below the slider */
+            right: 20px;    /* Align dots to the right */
+        }
+
+        /* Styling the Caption */
+        .slider-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
             color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .student-photo {
-            width: 100px; /* Width of the photo */
-            height: 100px; /* Height of the photo */
-            border-radius: 50%; /* Makes the photo circular */
-            border: 3px solid #007bff; /* Border color */
-            margin: 10px 0;
-        }
-        .student-info {
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            text-align: left;
+            font-size: 18px;
+            border-radius: 5px;
         }
-        .signature {
-            width: 100%;
-            height: 50px; /* Adjust height as needed */
-            background-image: url('signature-placeholder.png'); /* Replace with your signature image URL */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin-top: 10px;
-        }
-        .footer {
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-            text-align: center;
+
+        /* Responsive for smaller screens */
+        @media (max-width: 768px) {
+            .slider-sp .build-prev,
+            .slider-sp .build-next {
+                width: 25px;
+                height: 25px;
+                top: 5px;
+                right: 20px;
+            }
+
+            .slider-sp .build-next {
+                right: 5px;
+            }
+
+            .slider-sp .slider-caption {
+                font-size: 14px;
+                padding: 5px;
+            }
+
+            .slider-sp .slick-dots {
+                bottom: -30px;
+                right: 10px;
+            }
         }
     </style>
 </head>
-<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="admission-card">
-        <div class="header">
-            <h1>School Name</h1>
-            <p class="mb-0">Admission Card</p>
-        </div>
-        <img src="student-photo.jpg" alt="Student Photo" class="student-photo"> <!-- Replace with your student photo URL -->
-        <div class="student-info">
-            <p><strong>Student Name:</strong> John Doe</p>
-            <p><strong>Date of Birth:</strong> January 1, 2010</p>
-            <p><strong>Class:</strong> 5th Grade</p>
-            <p><strong>Admission Date:</strong> August 1, 2024</p>
-        </div>
-        <div class="signature"></div> <!-- Signature area -->
-        <div class="footer">
-            <p class="text-muted">Authorized Signature</p>
-        </div>
+<body>
+
+  <div class="container">
+   <div class="row">
+     <!-- Custom Arrows -->
+     <i class='fa build-prev'><img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></i>
+     <i class='fa build-next'><img src="assets/images/btn-arrow-right.svg" alt="Right Arrow"></i>
+ 
+        <!-- Slider Section -->
+    <div class="slider-sp">
+      <!-- Slider Images with Captions -->
+      <div><img src="assets/images/ci-home-1.jpg" alt="Slide 1" class="img-fluid">
+          <div class="slider-caption">Slide 1 Caption</div>
+      </div>
+      <div><img src="assets/images/ci-home-2.jpg" alt="Slide 2" class="img-fluid">
+          <div class="slider-caption">Slide 2 Caption</div>
+      </div>
+      <div><img src="assets/images/ci-home-1.jpg" alt="Slide 3" class="img-fluid">
+          <div class="slider-caption">Slide 3 Caption</div>
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   </div>
+ 
+
+
+  </div>
+
+    <!-- jQuery and Slick JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider-sp').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+                prevArrow: $(".build-prev"),  // Custom previous arrow
+                nextArrow: $(".build-next")   // Custom next arrow
+            });
+        });
+    </script>
 </body>
 </html>
