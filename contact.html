@@ -33,6 +33,99 @@
 
     <!-- Google tag (gtag.js) -->
 <style>
+.contact{
+
+    position: relative;
+}
+   /* Custom Arrow Styling */
+.arrowb .build-prev,
+.arrowb .build-next {
+    position: absolute;
+    top: 99%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.arrowb .build-prev {
+    margin-left: -10px; /* Position previous arrow on the right */
+    left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb .build-next {
+    margin-left: 53px; /* Position next arrow on the right */
+    left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb .build-prev img, 
+.arrowb .build-next img {
+    width: 60%;
+    height: auto;
+}
+
+/* Customizing Dots */
+ .slick-dots {
+    position: absolute;
+    bottom: -40px;
+    right: 20px; /* Move dots to the right */
+    left: unset; /* Remove any left alignment */
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Spacing between dots */
+    justify-content: flex-end; /* Align dots to the right */
+}
+
+ .slick-dots li {
+    margin: 0;
+    padding: 0;
+}
+
+.slick-dots li button {
+    background-color: transparent; /* Remove default background */
+    border: none;
+    padding: 0;
+    width: 15px; /* Custom dot size */
+    height: 15px;
+    border-radius: 50%; /* Circular dots */
+    background: url('assets/images/dot-inactive.svg') no-repeat center center; /* Inactive dot image */
+    background-size: cover;
+}
+
+/* Active Dot Styling */
+ .slick-dots li.slick-active button {
+    background: url('assets/images/dot-active.svg') no-repeat center center; /* Active dot image */
+    background-size: cover;
+    color: red;
+    background-color: red;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .contact .build-prev,
+    .contact .build-next {
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        right: 20px;
+        left: unset;
+    }
+
+    .contact .build-next {
+        right: 5px;
+    }
+
+    .contact .slick-dots {
+        bottom: -30px;
+        right: 10px; /* Align dots to the right for smaller screens */
+        left: unset;
+    }
+}
+.arrowb{
+
+    margin-top: -21px;
+}
 
   @media (max-width: 768px) {
 
@@ -171,8 +264,11 @@
 
 
 
-    <div class="container mt-5 mb-5">
-        <div class="slick-slider">
+    <div class="container mt-5 mb-5 contact">
+
+       
+
+        <div class="slick-slider-contact">
             <!-- Slide 1 -->
             <div class="slide">
                 <div class="row">
@@ -193,7 +289,7 @@
                     </div>
                     <div class="col-md-8 image-content order-1 order-lg-2 p-5">
                         <img src="assets/images/building-image-desktop-3.jpg" alt="Terraces - Brettenham House" class="img-fluid img-fluid d-none d-lg-block">
-                <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
+                        <img src="assets/images/building-image-mobile-3.jpg" alt="Terraces - Brettenham House" class="img-fluid d-lg-none">
                     </div>
 
                    
@@ -229,13 +325,17 @@
         </div>
 
         <div class="custom-navigation d-flex justify-content-start align-items-center mt-3">
-            <button type="button" class="slick-prev custom-prev-arrow"></button>
+            
             <div class="slide-indicator indicator-location indicator-bill mx-3">
                 <span id="current-slide">1/2</span>/<span id="total-slides">2</span>
             </div>
-            <button type="button" class="slick-next custom-next-arrow"></button>
+          
         </div>
 
+       <div class="arrowb">
+        <i class='fa build-prev'><img src="assets/images/btn-arrow-left.svg" alt="Left Arrow"></i>
+        <i class='fa build-next'><img src="assets/images/btn-arrow-right.svg" alt="Right Arrow"></i>
+       </div>
 
         
     </div>
@@ -373,7 +473,7 @@ $(window).on('scroll', function() {
 <script>
     
     $(document).ready(function() {
-    var $slickElement = $('.slick-slider');
+    var $slickElement = $('.slick-slider-contact');
 
     // Manually set the total slide count right after DOM is ready
     var totalSlides = $slickElement.children().length; // Get number of slides
@@ -393,8 +493,8 @@ $(window).on('scroll', function() {
         arrows: true,
         autoplay: false,
         autoplaySpeed: 3000,
-        prevArrow: '<button type="button" class="slick-prev custom-prev-arrow"><i class="fas fa-chevron-left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next custom-next-arrow"><i class="fas fa-chevron-right"></i></button>'
+        prevArrow: $(".build-prev"),  // Custom previous arrow
+       nextArrow: $(".build-next")   // Custom next arrow
     });
 
     // Manually trigger init event to set the first current slide on page load

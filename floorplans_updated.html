@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Floorplans - Brettenham House</title>
+    <meta name="description" content="Brettenham House’s location embodies the spirit of the building, a seamless blend of fascinating heritage with the very best in modern culture and offering a space where great things can be achieved.">
+    <meta name="author" content="Other Alias">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/slick-theme.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.css?v=1.0.0" rel="stylesheet">
+    <link href="assets/css/style.css?v=1.0.0" rel="stylesheet">
+    <link href="assets/css/media.css?v=1.0.0" rel="stylesheet">
+    <link href="assets/images/favicon.png" rel="shortcut icon">
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Open Graph -->
+    <meta property='og:title' content='Brettenham House' />
+    <meta property='og:description' content='120,000 SQ FT OF CRAFTED WORKSPACE. OUTSTANDING DESIGN MEETS NATURAL BEAUTY. PANORAMIC VIEWS ACROSS THE RIVER. ICONIC RIVERSIDE LOCATION. AVAILABLE Q1 2026' />
+    <meta property='og:type' content='website' />
+    <meta property='og:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
+    <!-- Twitter Card -->
+    <meta property='twitter:title' content='Brettenham House' />
+    <meta property='twitter:card' content='summary' />
+    <meta property='twitter:description' content='120,000 SQ FT OF CRAFTED WORKSPACE. OUTSTANDING DESIGN MEETS NATURAL BEAUTY. PANORAMIC VIEWS ACROSS THE RIVER. ICONIC RIVERSIDE LOCATION. AVAILABLE Q1 2026' />
+    <meta property='twitter:image' content='https://www.brettenhamhouse.com/assets/images/share.jpg' />
+
+    <!-- Google tag (gtag.js) -->
+<style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    #dataTable {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #ECF5F5;
+}
+
+.level-column,
+.level-head {
+    border-bottom: 1px solid black; /* Only show bottom border */
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.total-column {
+    border-bottom: none;
+}
+
+th {
+    font-weight: bold;
+}
+
+.clicked {
+    background-color: #BDE2DF; /* Light green background for selected cells */
+    outline: 3px solid black; /* Use outline instead of border */
+    outline-offset: -3px; /* Ensures outline looks like a border */
+    box-sizing: border-box; /* Ensure the cell size doesn't change */
+}
+
+.sum-row {
+    font-weight: bold;
+}
+
+.level-column {
+    font-weight: bold;
+    cursor: default;
+}
+
+
+        
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container, .row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-lg-10, .col-lg-12, .col-lg-3, .col-lg-9, .col-lg-1 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    h1.rotate {
+        transform: rotate(0deg);
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    p, td {
+        font-size: 14px;
+        text-align: center;
+    }
+    #dataTable {
+        width: 100%;
+        font-size: 12px;
+    }
+    /* Adjusting button sizes for mobile */
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    /* Hide non-essential large images on mobile */
+    .d-none.d-lg-block {
+        display: none !important;
+    }
+}
+
+</style>
+
+<style>
+
+
+/* BRETTENHAM HOUSE
+/* OTHER ALIAS LTD
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* VARIABLES
+/* ---------------------------------------------- */
+:root {
+    --blue: #0048C6;
+    --teal: #62BCB3;
+    --green: #168771;
+    --orange: #FF4602;
+    --mustard: #FF9222;
+    --black: #000000;
+    --white: #FFFFFF;
+    --off-black: #333333;
+    --grey: #B6B6B6FF;
+    --light-grey: #ECF5F5;
+    --ziggurat: #BDE2DF;
+    --breaker-bay: #6CA6A2;
+    --edgewater: #CAE2E0;
+}
+
+/* ---------------------------------------------- */
+/* @FONT-FACE
+/* ---------------------------------------------- */
+
+@font-face {
+    font-family: 'Altform-Regular';
+    src: url('../fonts/Altform-Regular.woff2') format('woff2'),
+    url('../fonts/Altform-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altform-Bold';
+    src: url('../fonts/Altform-Bold.woff2') format('woff2'),
+    url('../fonts/Altform-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.bg-location{
+    background-color: var(--mustard) !important;
+}
+
+.bg-download{
+    background-color: var(--green) !important;
+}
+
+.bg-floorplan{
+    background-color: var(--teal) !important;
+}
+
+.bg-contact{
+    background-color: var(--blue) !important;
+}
+
+/* index  custom slide slick */
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 50px;
+    margin: 4px;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 59px;
+    height: 5px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+   background-color: var(--white);
+}
+
+.slick-dots li button {
+    display: none;
+}
+
+.slick-dots li:hover{
+    background-color: var(--orange);
+}
+
+/* index  custom slide slick */
+
+
+/* Add JS script for clickable row and tab activation */
+<script>
+    // Function to activate the tab when clicking on a level in the table
+    function activateTab(levelId) {
+        const tabLink = document.querySelector(`[href="#${levelId}"]`);
+        if (tabLink) {
+            tabLink.click(); // Activate the tab
+            window.location.href = `#${levelId}`; // Scroll to the tab section
+        }
+    }
+
+    // Add click event to table rows or cells to activate the respective tab
+    document.querySelectorAll('#dataTable tbody tr').forEach((row) => {
+        row.addEventListener('click', function () {
+            const level = row.querySelector('td').textContent.trim(); // Get the level number
+            let levelId = '';
+
+            // Map the level text to the corresponding tab ID
+            switch (level) {
+                case 'B2': levelId = 'level-B2'; break;
+                case 'B1': levelId = 'level-B1'; break;
+                case 'LG': levelId = 'level-LG'; break;
+                case 'G': levelId = 'level-G'; break;
+                case '1': levelId = 'level-1'; break;
+                case '2': levelId = 'level-2'; break;
+                case '3': levelId = 'level-3'; break;
+                case '4': levelId = 'level-4'; break;
+                case '5': levelId = 'level-5'; break;
+                case '6': levelId = 'level-6'; break;
+                case '7': levelId = 'level-7'; break;
+                case '8': levelId = 'level-8'; break;
+                case '9': levelId = 'level-9'; break;
+                default: return;
+            }
+
+            // Call the function to activate the tab
+            activateTab(levelId);
+        });
+    });
+</script>
